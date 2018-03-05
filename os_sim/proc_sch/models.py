@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class Sch_Algo(models.Model):
 	arrival_time = models.CharField(max_length=250)
 	burst_time= models.CharField(max_length=250)

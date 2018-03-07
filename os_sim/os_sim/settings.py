@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bankers_algo.apps.BankersAlgoConfig',
 ]
 
 MIDDLEWARE = [

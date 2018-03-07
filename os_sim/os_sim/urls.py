@@ -20,4 +20,6 @@ urlpatterns = [
 	url(r'^$', include('main.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^proc_sch/',include('proc_sch.urls')),
+   # url(r'^proc_syn/',include('process_synchronization.urls')),
+    url(r'^bankers_algo/',include('bankers_algo.urls')),
 ]

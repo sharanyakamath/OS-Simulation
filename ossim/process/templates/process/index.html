@@ -1,0 +1,109 @@
+{% extends "ossim/base.html" %}
+
+{% block title %} <title> Process Scheduling </title> {% endblock %}
+
+
+{% block links %}
+{% load static %}
+<link href="{%static 'filesystem/styles.css' %}" rel="stylesheet" type="text/css" >
+{% endblock %}
+
+{% block content %}
+<nav role="navigation" class="navbar navbar-default">
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/process/">Process Scheduling</a></li>
+            <li><a href="/memory/page/">Page Replacement</a></li>
+            <li><a href="/disk/">Disk Scheduling</a></li>
+            <li><a href="/synchro/semaphores/">Semaphores</a></li>
+            <li><a href="/synchro/socket/">Sockets</a></li>
+            <li><a href="/filesystem/">File Structure</a></li>
+            <li><a href="/mat/">Memory Allocation</a></li>
+            <li><a href="/synchro/deadlocks/">Banker's Algorithm</a></li>
+        </ul>
+    </div>
+</nav>
+
+<h1>Process Scheduling</h1>
+<br><br>
+
+<div class="c">
+<div class="card">
+<a href="/process/demo/1/">
+  <img src="http://moziru.com/images/drawn-clock-cute-cartoon-5.png" alt="Avatar" style="width:300px; height:200px;">
+   </a>
+  <div class="container">
+    <h4><b>SJF, FCFS, RR, SRTF</b></h4>  
+  </div>
+
+</div>
+
+<div class="card">
+<a href="/process/demo/2/">
+  <img src="http://www.clipartsuggest.com/images/176/urgent-priority-dispatch-BhGPPC-clipart.jpg" alt="Avatar" style="width:250px; height:200px;">
+   </a>
+  <div class="container">
+    <h4><b>Priority Scheduling</b></h4>  
+  </div>
+ 
+</div>
+
+<div class="card">
+<a href="/process/demo/3/">
+  <img src="https://st2.depositphotos.com/4356917/6429/v/950/depositphotos_64293151-stock-illustration-queue-kids-waiting-in-line.jpg" alt="Avatar" style="width:250px; height:200px;">
+  </a>
+  <div class="container">
+    <h4><b>Multi Level Queue</b></h4>  
+  </div>
+  
+</div>
+
+<div class="card">
+<a href="/wiki/process/">
+  <img src="https://www.toonpool.com/user/10807/files/wiki-leaks_1120075.jpg" alt="Avatar" style="width:300px; height:200px;">
+   </a>
+  <div class="container">
+    <h4><b>Wiki</b></h4>  
+  </div>
+ 
+</div>
+
+</div>
+{% endblock %}
+
+{% block style %}
+<style>
+.card {
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.8);
+    transition: 0.3s;
+    width: 300px;
+    height: 300px;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 2px;
+    padding: 10px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+    border-color: white;
+    border-width: 2px;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.c{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+</style>
+
+{% endblock %}

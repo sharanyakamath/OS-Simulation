@@ -1,6 +1,5 @@
-# OS-Simulation
-Simulation of Operating Systems concepts using front-end and back-end.
-### Prerequisites
-Django, Python3
-### How to Run
-Clone the repository. <br>cd into the os_sim folder. <br>Run the command: python manage.py runserver 
+# OS-Simulator
+A Simulator to demonstrate functions of an operating System
+
+Don't merge your own pull requests. Let two people review it first. 
+Don't push directly to master branch.

@@ -1,0 +1,45 @@
+{% extends "ossim/base.html" %}
+
+{% block title %} <title> Disk Scheduling Algorithms </title> {% endblock %}
+
+
+{% block links %}
+{% load static %}
+<link href="{%static 'filesystem/styles.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+
+<h1>Disk Scheduling</h1>
+<div id="choice">
+    <ul id="ulchoice">
+        <a href="/disk/demo/"><li id="lichoice">FCFS</li></a>
+	<a href="/disk/SSTF/"><li id="lichoice">SSTF</li></a>
+	<a href="/disk/SCAN/"><li id="lichoice">SCAN</li></a>
+	<a href="/disk/CSCAN/"><li id="lichoice">CSCAN</li></a>
+	<a href="/disk/LOOK/"><li id="lichoice">LOOK</li></a>
+	<a href="/disk/CLOOK/"><li id="lichoice">CLOOK</li></a>
+    </ul>
+</div>
+
+<!-- <div class="main-container">
+{% for alg in algos %}
+    <div class="alg-container">
+      <div class="alg-name">  {{alg.name}} </div>
+      <div class="alg-description">
+        {{alg.description}}
+      </div>
+    </div>
+    <br>
+{% endfor %}
+<a href="/disk/demo/" class="btn btn-primary">Demo</a><br>
+
+
+</div> -->
+{% endblock %}
+{% block style %}
+<style>
+
+</style>
+
+{% endblock %}

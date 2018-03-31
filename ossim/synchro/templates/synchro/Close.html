@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<style>
+    #container {
+        width: 966px;
+        height: 5px;
+        position: absolute;
+        background: red;
+        top: 50%;
+        left: 17.6%;
+        transform: rotate(-10deg);
+    }
+    
+    #container2 {
+        width: 966px;
+        height: 5px;
+        position: absolute;
+        background: red;
+        top: 75%;
+        left: 17.6%;
+        transform: rotate(10deg);
+    }
+    
+    #animate {
+        width: 50px;
+        height: 5px;
+        position: absolute;
+        background-color: red;
+        top: 0%;
+        left: 0%;
+        opacity: 0;
+        /*  transform: rotate(150deg);
+*/
+    }
+    
+    #animate2 {
+        width: 50px;
+        height: 5px;
+        position: absolute;
+        background-color: red;
+        top: 0%;
+        left: 0%;
+        opacity: 0;
+        /*  transform: rotate(150deg);
+*/
+    }
+    
+    #har {
+        background-color: red;
+    }
+        .css-typing p {
+        border-right: .15em solid orange;
+        font-family: "Courier";
+        font-size: 14px;
+        color: white;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    
+    .css-typing p:nth-child(1) {
+        width: 13em;
+        -webkit-animation: type 2s steps(50, end);
+        animation: type 2s steps(50, end);
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes type {
+        0% {
+            width: 0;
+        }
+        99.9% {
+            border-right: .15em solid orange;
+        }
+        100% {
+            border: none;
+        }
+    }
+    
+    @-webkit-keyframes type {
+        0% {
+            width: 0;
+        }
+        99.9% {
+            border-right: .15em solid orange;
+        }
+        100% {
+            border: none;
+        }
+    }
+    
+    @keyframes blink {
+        50% {
+            border-color: transparent;
+        }
+    }
+    
+    @-webkit-keyframes blink {
+        50% {
+            border-color: tranparent;
+        }
+    }
+</style>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body id="har">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <div class="container-fluid">
+        <div>
+            <div>
+                <center>
+                    <h1>TCP socket programming</h1>
+                </center>
+            </div>
+
+            <div>
+                <nav role="navigation " class="navbar navbar-inverse ">
+                    <div id="navbarCollapse " class="collapse navbar-collapse ">
+                        <ul class="nav navbar-nav ">
+                         <li class="active" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Socket">Socket</a></li>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Bind">Bind</a></li>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Listen">Listen</a></li>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Connect">Connect</a></li>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Accept">Accept</a></li>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Receive">Receive</a></li>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Send">Send</a></li>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Close">Close</a></li></ul>
+                    </div>
+                </nav>
+            </div>
+            
+            <div class="css-typing">
+            <p>Close the connection.</p></div>
+
+            <button type="button" , id="server" , name="server" , style="height:125px;width:125px;position:absolute;top:55%;left:10%;border-radius:125px;border:1px solid red; background-color: white">Server </button>
+            <button type="button" , id="client" , name="client" , style="height:125px;width:125px;position:absolute;top:30%;left:80%;border-radius:125px;border:1px solid red; background-color: white">Client </button>
+            <button type="button" , id="client2" , name="client2" , style="height:125px;width:125px;position:absolute;top:80%;left:80%;border-radius:125px;border:1px solid red; background-color: white">Client2 </button>
+            <button type="button" , id="one" , name="one" , style="height:30px;width:30px;position:absolute;top:56%;left:18%;border-radius:30px;border:1px solid red;background-color:red"></button>
+            <button type="button" , id="three" , name="three" , style="height:30px;width:30px;position:absolute;top:66%;left:18%;border-radius:30px;border:1px solid red;background-color:red"></button>
+            <button type="button" , id="four" , name="four" , style="height:30px;width:30px;position:absolute;top:52%;left:20%;border-radius:30px;border:1px solid red;background-color:red"></button>
+           <button type="button" , id="six" , name="six" , style="height:30px;width:30px;position:absolute;top:70%;left:20%;border-radius:30px;border:1px solid red;background-color:red"></button>
+            
+            <div id="container">
+                <div id="animate"></div>
+            </div>
+
+            <div id="container2">
+                <div id="animate2"></div>
+            </div>
+        </div>
+</body>

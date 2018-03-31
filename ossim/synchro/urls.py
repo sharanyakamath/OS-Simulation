@@ -21,6 +21,7 @@ urlpatterns =[
     url(r'^socket/Send2/$', views.Send2, name='Send2'),
     url(r'^socket/Receive2/$', views.Receive2, name='Receive2'),
     url(r'^socket/Close2/$', views.Close2, name='Close2'),
+    
     url(r'^deadlocks/$', views.deadlocks, name='deadlocks'),
     url(r'^semaphores/demo/(?P<pk>[0-9]+)/$', views.sem_demo, name='sem_demo'),
     url(r'^socket/demo/(?P<pk>[0-9]+)/$', views.socket_demo, name='socket_demo'),

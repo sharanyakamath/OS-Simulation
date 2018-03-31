@@ -47,7 +47,6 @@ def Receive2(request):
 
 def Close2(request):
     return render(request,'synchro/Close2.html')
-
 def semaphores(request):
     algos = SynchroAlg.objects.filter(demourl="sem")
     context = {'algos': algos}

@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+    color: #000000;
+    background-color: yellow;
+}
+
+button {
+    padding: 20px;
+    width: 30%;
+    float: left;
+    background: #23282e;
+    border: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+
+a {
+    text-decoration: none;
+    color: #FFF;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #FFF;
+}
+
+h1 {
+    position: relative;
+    margin: 0 auto;
+    width: 95%;
+    padding: 20px;
+    color: yellow;
+    text-align: center;
+    background-color: white;
+    font-style: oblique;
+}

@@ -1,63 +1,99 @@
 <!DOCTYPE html>
-
+{% load staticfiles %}
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    .user{
+      color: #ff1a1a;
+    }
+
+    .user1{
+      color: black;
+      font-family: arial;
+    }
+  </style>
 </head>
 
-<body>
+<body style = "background-color: #ffffcc; font-family: Trebuchet;" >
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <div class="container-fluid">
-    <center><h1>Simulation of the Reader-Writer semaphore</u> </h1></center>
-    <form onsubmit="return false">
-      <p><br /></p>
-      <h4>First user:  </h4>
-      Read: <input type = "checkbox", name = "first">
-      Write: <input type = "checkbox" name = "first"><br>
-      <p style="font-size:10px"><br /><br /></p>
-      <h4>Second user: </h4>
-      Read: <input type = "checkbox", name = "second">
-      Write: <input type = "checkbox" name = "second">
-      <p style="font-size:10px"><br /><br /></p>
-      <h4>Third user: </h4>
-      Read: <input type = "checkbox", name = "third">
-      Write: <input type = "checkbox" name = "third">
-      <p style="font-size:10px"><br /><br /></p>
-      <h4>Fourth user: </h4>
-      Read: <input type = "checkbox", name = "fourth">
-      Write: <input type = "checkbox" name = "fourth">
-      <p style="font-size:10px"><br /><br /></p>
-      <h4>Fifth user: </h4>
-      Read: <input type = "checkbox", name = "fifth">
-      Write: <input type = "checkbox" name = "fifth">
-      <p style="font-size:10px"><br /><br /></p>
-      <h4>Sixth user: </h4>
-      Read: <input type = "checkbox", name = "sixth">
-      Write: <input type = "checkbox" name = "sixth">
-      <p style="font-size:10px"><br /><br /></p>
-      <h4>Seventh user: </h4>
-      Read: <input type = "checkbox", name = "seventh">
-      Write: <input type = "checkbox" name = "seventh">
+       <div class = "user">
+      <center><h1>Simulation of the Reader-Writer semaphore</u> </h1></center>
+    </div>
+      <form onsubmit="return false">
+        <p><br /></p>
+        <div class = "user1">
 
-      <br /><br />
-      <input type = "submit", name ="Go!", onclick="update()", class="btn btn-primary">
+        <div style = "position: absolute; top: 23%; left: 5%; text-align: center;">
+        First user:<br>
+        Read: <input type = "radio", name = "first"><br>
+        Write: <input type = "radio" name = "first"><br>
+        <p style="font-size:10px;"><br /><br /></p>
+      </div>
+
+        <div style = "position: absolute; top: 23%; left: 18%; text-align: center;">
+        Second user:<br>
+        Read: <input type = "radio", name = "second"><br>
+        Write: <input type = "radio" name = "second"><br>
+        <p style="font-size:10px"><br /><br /></p>
+        </div>
+
+        <div style = "position: absolute; top: 23%; left: 33%; text-align: center;">
+        Third user:<br>
+        Read: <input type = "radio", name = "third"><br>
+        Write: <input type = "radio" name = "third"><br>
+        <p style="font-size:10px"><br /><br /></p>
+      </div>
+
+      <div style = "position: absolute; top: 23%; left: 46%; text-align: center;">
+        Fourth user:<br>
+        Read: <input type = "radio", name = "fourth"><br>
+        Write: <input type = "radio" name = "fourth"><br>
+        <p style="font-size:10px"><br /><br /></p>
+      </div>
+
+      <div style = "position: absolute; top: 23%; left: 61%; text-align: center;">
+        Fifth user:<br>
+        Read: <input type = "radio", name = "fifth"><br>
+        Write: <input type = "radio" name = "fifth"><br>
+        <p style="font-size:10px"><br /><br /></p>
+      </div>
+
+      <div style = "position: absolute; top: 23%; left: 75%; text-align: center;">
+        Sixth user:<br>
+        Read: <input type = "radio", name = "sixth"><br>
+        Write: <input type = "radio" name = "sixth"><br>
+        <p style="font-size:10px"><br /><br /></p>
+        </div>
+
+      <div style = "position: absolute; top: 23%; left: 88%; text-align: center;">
+        Seventh user:<br>
+        Read: <input type = "radio", name = "seventh"><br>
+        Write: <input type = "radio" name = "seventh"><br>
+      </div>
+
+      <br /><br /></div>
+      <input type = "submit", name ="Go!", onclick="update()", class="btn btn-primary" style="width: 160px; height: 75px; position: absolute; top: 45%; left: 79%; font-size: 30px;">
     </form>
 
-    <button type = "button", id ="one", name = "one", style="height:80px;width:165px;position:absolute;top:10%;left:15%;background-color:white"> </button>
-    <button type = "button", id ="two", name = "two", style="height:80px;width:165px;position:absolute;top:22%;left:15%;background-color:white"> </button>
-    <button type = "button", id ="three", name = "three", style="height:80px;width:165px;position:absolute;top:34%;left:15%;background-color:white"> </button>
-    <button type = "button", id ="four", name = "four", style="height:80px;width:165px;position:absolute;top:46%;left:15%;background-color:white"> </button>
-    <button type = "button", id ="five", name = "five", style="height:80px;width:165px;position:absolute;top:58%;left:15%;background-color:white"> </button>
-    <button type = "button", id ="six", name = "six", style="height:80px;width:165px;position:absolute;top:70%;left:15%;background-color:white"> </button>
-    <button type = "button", id ="seven", name = "seven", style="height:80px;width:165px;position:absolute;top:82%;left:15%;background-color:white"> </button>
+    <button type = "button", name = "one", style="height:80px;width:165px;position:absolute;top:10%;left:1%;background-color:white"><img src = "" id ="one" style="height:70px; width:70px;display:none; position: relative; left: 27%;"> </button>
+    <button type = "button", name = "two", style="height:80px;width:165px;position:absolute;top:10%;left:15%;background-color:white"><img src = "" id ="two" style="height:70px; width:70px;display:none; position: relative; left: 27%;"> </button>
+    <button type = "button", name = "three", style="height:80px;width:165px;position:absolute;top:10%;left:29%;background-color:white"> <img src = "" id ="three" style="height:70px; width:70px;display:none; position: relative; left: 27%;"></button>
+    <button type = "button", name = "four", style="height:80px;width:165px;position:absolute;top:10%;left:43%;background-color:white"><img src = "" id ="four" style="height:70px; width:70px;display:none; position: relative; left: 27%;"> </button>
+    <button type = "button", name = "five", style="height:80px;width:165px;position:absolute;top:10%;left:57%;background-color:white"> <img src = "" id ="five" style="height:70px; width:70px;display:none; position: relative; left: 27%;"></button>
+    <button type = "button", name = "six", style="height:80px;width:165px;position:absolute;top:10%;left:71%;background-color:white"><img src = "" id ="six" style="height:70px; width:70px;display:none; position: relative; left: 27%;"> </button>
+    <button type = "button", name = "seven", style="height:80px;width:165px;position:absolute;top:10%;left:85%;background-color:white"><img src = "" id ="seven" style="height:70px; width:70px;display:none; position: relative; left: 27%;"> </button>
 
-    <button type = "button", id ="lock", class ="btn btn-primary", name = "lock", style="height:100px;width:200px;position:absolute;top:20%;left:75%;font-size:20px">Writing lock: </button>
+    <button type = "button", id ="lock", class ="btn btn-primary", name = "lock", style="height:150px;width:150px;position:absolute;top:50%;left:4%;font-size:20px; border-radius: 100px;">Writing lock: </button>
+
 
     <div>
       <form>
-        <textarea id="doc" style="height:600px;width:450px;position:absolute;top:11%;left:36%;font-size:20px" disabled=""> </textarea>
+        <textarea id="doc" style="height:300px;width:720px;position:absolute;top:40%;left:20%;font-size:20px;color: black;" disabled=""> </textarea>
       </form>
     </div>
     <script type = "text/javascript">
@@ -95,96 +131,110 @@
 
         for(var i=0;i<15;i++)
         {
-          document.getElementById("one").style.backgroundColor = '#FFFFFF';
-          document.getElementById("two").style.backgroundColor = '#FFFFFF';
-          document.getElementById("three").style.backgroundColor = '#FFFFFF';
-          document.getElementById("four").style.backgroundColor = '#FFFFFF';
-          document.getElementById("five").style.backgroundColor = '#FFFFFF';
-          document.getElementById("six").style.backgroundColor = '#FFFFFF';
-          document.getElementById("seven").style.backgroundColor = '#FFFFFF';
+          document.getElementById("one").style.display = 'none';
+          document.getElementById("two").style.display = 'none';
+          document.getElementById("three").style.display = 'none';
+          document.getElementById("four").style.display = 'none';
+          document.getElementById("five").style.display = 'none';
+          document.getElementById("six").style.display = 'none';
+          document.getElementById("seven").style.display = 'none';
         }
 
             if(document.forms[0].elements[0].checked == true)
             {
-              document.getElementById("one").style.backgroundColor = '#00BFFF';
+              document.getElementById("one").style.display = "block";
+              document.getElementById("one").src = "{% static 'img/reader.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[2].checked == true)
             {
-              document.getElementById("two").style.backgroundColor = '#00BFFF';
+              document.getElementById("two").style.display = "block";
+              document.getElementById("two").src = "{% static 'img/reader.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[4].checked == true)
             {
-              document.getElementById("three").style.backgroundColor = '#00BFFF';
+              document.getElementById("three").style.display = "block";
+              document.getElementById("three").src = "{% static 'img/reader.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[6].checked == true)
             {
-              document.getElementById("four").style.backgroundColor = '#00BFFF';
+              document.getElementById("four").style.display = "block";
+              document.getElementById("four").src = "{% static 'img/reader.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[8].checked == true)
             {
-              document.getElementById("five").style.backgroundColor = '#00BFFF';
+              document.getElementById("five").style.display = "block";
+              document.getElementById("five").src = "{% static 'img/reader.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[10].checked == true)
             {
-              document.getElementById("six").style.backgroundColor = '#00BFFF';
+              document.getElementById("six").style.display = "block";
+              document.getElementById("six").src = "{% static 'img/reader.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[12].checked == true)
             {
-              document.getElementById("seven").style.backgroundColor = '#00BFFF';
+              document.getElementById("seven").style.display = "block";
+              document.getElementById("seven").src = "{% static 'img/reader.png' %}";
               mutex =-1;
             }
 
             if(document.forms[0].elements[1].checked == true)
             {
-              document.getElementById("one").style.backgroundColor = '#DC143C';
+              document.getElementById("one").style.display = "block";
+              document.getElementById("one").src = "{% static 'img/writer.png' %}";
               var change = document.getElementById("lock");
               change.innerHTML ="Writing Lock: 1"
               mutex =0;
             }
             if(document.forms[0].elements[3].checked == true)
             {
-              document.getElementById("two").style.backgroundColor = '#DC143C';
+              document.getElementById("two").style.display = "block";
+              document.getElementById("two").src = "{% static 'img/writer.png' %}";
               var change = document.getElementById("lock");
               change.innerHTML ="Writing Lock: 2"
               mutex =1;
             }
             if(document.forms[0].elements[5].checked == true)
             {
-              document.getElementById("three").style.backgroundColor = '#DC143C';
+              document.getElementById("three").style.display = "block";
+              document.getElementById("three").src = "{% static 'img/writer.png' %}";
               var change = document.getElementById("lock");
               change.innerHTML ="Writing Lock: 3"
               mutex =2;
             }
             if(document.forms[0].elements[7].checked == true)
             {
-              document.getElementById("four").style.backgroundColor = '#DC143C';
+              document.getElementById("four").style.display = "block";
+              document.getElementById("four").src = "{% static 'img/writer.png' %}";
               var change = document.getElementById("lock");
               change.innerHTML ="Writing Lock: 4"
               mutex =3;
             }
             if(document.forms[0].elements[9].checked == true)
             {
-              document.getElementById("five").style.backgroundColor = '#DC143C';
+              document.getElementById("five").style.display = "block";
+              document.getElementById("five").src = "{% static 'img/writer.png' %}";
               var change = document.getElementById("lock");
               change.innerHTML ="Writing Lock: 5"
               mutex =4;
             }
             if(document.forms[0].elements[11].checked == true)
             {
-              document.getElementById("six").style.backgroundColor = '#DC143C';
+              document.getElementById("six").style.display = "block";
+              document.getElementById("six").src = "{% static 'img/writer.png' %}";
               var change = document.getElementById("lock");
               change.innerHTML ="Writing Lock: 6"
               mutex =5;
             }
             if(document.forms[0].elements[13].checked == true)
             {
-              document.getElementById("seven").style.backgroundColor = '#DC143C';
+              document.getElementById("seven").style.display = "block";
+              document.getElementById("seven").src = "{% static 'img/writer.png' %}";
               var change = document.getElementById("lock");
               change.innerHTML ="Writing Lock: 7"
               mutex =6;
@@ -198,15 +248,28 @@
             {
                 document.getElementById("doc").disabled = false;
             }
+
+        for(var i=0;i<15;i++)
+          {
+            for(var j=0;j<15;j++)
+            {
+              {
+                document.forms[i].elements[j].checked = false;
+              }
+            }
+          }
+
+
       }
     </script>
 
     <p style="position:absolute;top:60%;left:79%;font-size:22px"><b> Access Legend: </b></p>
     <button type = "button", style="height:25px;width:25px;position:absolute;top:65%;left:80%;background-color:#FFFFFF"> </button>
-    <p style="position:absolute;top:65%;left:82%;font-size:20px"> Not accessing </p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:70%;left:80%;background-color:#00BFFF"> </button>
-    <p style="position:absolute;top:70%;left:82%;font-size:20px"> Reading </p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:75%;left:80%;background-color:#DC143C"> </button>
-    <p style="position:absolute;top:75%;left:82%;font-size:20px"> Writing </p>
+    <p style="position:absolute;top:65%;left:83%;font-size:20px"> Not accessing </p>
+    <img src = "{% static 'img/reader.png' %}", style="height:25px;width:25px;position:absolute;top:70%;left:80%;"> </button>
+    <p style="position:absolute;top:70%;left:83%;font-size:20px"> Reading </p>
+    <img src = "{% static 'img/writer.png' %}", style="height:25px;width:25px;position:absolute;top:75%;left:80%;"> </button>
+    <p style="position:absolute;top:75%;left:83%;font-size:20px"> Writing </p>
+    </div>
   </div>
 </body>

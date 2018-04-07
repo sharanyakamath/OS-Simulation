@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-
+{% load staticfiles %}
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,29 +12,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <div class="container-fluid">
 
-    <center><h1 style="color: #ff1a1a;">Simulation of the Sleeping Barber Problem</h1></center>
+    <div style="position: absolute; left: 20%"><h1 style="color: #ff1a1a;">Simulation of the Sleeping Barber Problem</h1></div>
 
-    <button type = "button", id ="mirror", name = "mirror", style="height:25px;width:190px;position:absolute;top:10%;left:63%;background-color:#00BFFF"> </button>
-    <button type = "button", id ="seat", name = "seat", style="height:200px;width:220px;position:absolute;top:15%;left:62%;background-color:#DC143C"> </button>
-    <button type = "button", id ="cust", name = "cust", style="height:125px;width:125px;position:absolute;top:20%;left:66%;border-radius:125px;border:1px solid #DC143C;background-color:#DC143C"></button>
-    <button type = "button", id ="barber", name = "barber", style="height:125px;width:125px;position:absolute;top:45%;left:66%;border-radius:125px;border:1px solid #000">Barber </button>
+    <button type = "button", id ="mirror", name = "mirror", style="height:25px;width:190px;position:absolute;top:10%;left:38%;background-color:#00BFFF"> </button>
+    <button type = "button", id ="seat", name = "seat", style="height:200px;width:220px;position:absolute;top:15%;left:37%;background-color:#DC143C"> </button>
+    <img src = "{% static 'img/haircut.png' %}", id ="cust", name = "cust", style="height:125px;width:125px;position:absolute;top:20%;left:42%; display: none;"></button>
+    <img src = "{% static 'img/sleep.png' %}", id ="barber", name = "barber", style="height:120px;width:120px;position:absolute;top:49%;left:40%;">
 
 
-    <button type = "button", id ="one", name = "one", style="height:100px;width:120px;position:absolute;top:75%;left:11%;background-color:white"> Seat 1 </button>
-    <button type = "button", id ="two", name = "two", style="height:100px;width:120px;position:absolute;top:75%;left:20%;background-color:white"> Seat 2</button>
-    <button type = "button", id ="three", name = "three", style="height:100px;width:120px;position:absolute;top:75%;left:29%;background-color:white"> Seat 3</button>
-    <button type = "button", id ="four", name = "four", style="height:100px;width:120px;position:absolute;top:75%;left:38%;background-color:white"> Seat 4</button>
-    <button type = "button", id ="five", name = "five", style="height:100px;width:120px;position:absolute;top:75%;left:47%;background-color:white"> Seat 5</button>
-    <button type = "button", id ="six", name = "six", style="height:100px;width:120px;position:absolute;top:75%;left:56%;background-color:white"> Seat 6</button>
-    <button type = "button", id ="seven", name = "seven", style="height:100px;width:120px;position:absolute;top:75%;left:65%;background-color:white"> Seat 7</button>
+    <button type = "button", name = "one", style="height:100px;width:120px;position:absolute;top:75%;left:11%;background-color:white"> <img src = "{% static 'img/man.png' %}" id ="one" style="height:80px; width:80px;display:none; position: relative; left: 10%;"> </button>
+    <button type = "button",  name = "two", style="height:100px;width:120px;position:absolute;top:75%;left:20%;background-color:white"> <img src = "{% static 'img/man.png' %}" id ="two" style="height:80px; width:80px;display:none; position: relative; left: 10%;"></button>
+    <button type = "button", name = "three", style="height:100px;width:120px;position:absolute;top:75%;left:29%;background-color:white"> <img src = "{% static 'img/man.png' %}" id ="three" style="height:80px; width:80px;display:none; position: relative; left: 10%;"></button>
+    <button type = "button", name = "four", style="height:100px;width:120px;position:absolute;top:75%;left:38%;background-color:white"> <img src = "{% static 'img/man.png' %}" id ="four" style="height:80px; width:80px;display:none; position: relative; left: 10%;"></button>
+    <button type = "button", name = "five", style="height:100px;width:120px;position:absolute;top:75%;left:47%;background-color:white"> <img src = "{% static 'img/man.png' %}" id ="five" style="height:80px; width:80px;display:none; position: relative; left: 10%;"></button>
+    <button type = "button", name = "six", style="height:100px;width:120px;position:absolute;top:75%;left:56%;background-color:white"> <img src = "{% static 'img/man.png' %}" id ="six" style="height:80px; width:80px;display:none; position: relative; left: 10%;"></button>
+    <button type = "button", name = "seven", style="height:100px;width:120px;position:absolute;top:75%;left:65%;background-color:white"> <img src = "{% static 'img/man.png' %}" id ="seven" style="height:80px; width:80px;display:none; position: relative; left: 10%;"></button>
 
     <!--button type ="button", onclick ="initiate()">Next!</button-->
 
-    <button class="btn btn-primary" id ="prod", type ="button", onclick ="produce()", style ="height:150px;width:250px;position:absolute;top:20%;left:15%;font-size:25px">Enter</button>
-    <button class="btn btn-primary" id ="con", type ="button", onclick ="exit()", style ="height:150px;width:250px;position:absolute;top:45%;left:15%;font-size:25px" disabled>Exit</button>
+    <button class="btn btn-primary" id ="prod", type ="button", onclick ="produce()", style ="height:50px;width:250px;position:absolute;top:60%;left:15%;font-size:25px">Enter</button>
+    <button class="btn btn-primary" id ="con", type ="button", onclick ="exit()", style ="height:50px;width:250px;position:absolute;top:60%;left:55%;font-size:25px" disabled>Exit</button>
 
-    <button class="btn btn-warning" id ="buffer-size", type ="button" style ="height:50px;width:143px;position:absolute;top:25%;left:42%;">Waiting Seats = 7</button>
-    <button class="btn btn-warning" id ="count", type ="button" style ="height:50px;width:143px;position:absolute;top:33%;left:42%;">Waiting = 0</button>
+    <button class="btn btn-danger" id ="buffer-size", type ="button" style ="height:50px;width:143px;position:absolute;top:25%;left:78%;">Waiting Seats = 7</button>
+    <button class="btn btn-danger" id ="count", type ="button" style ="height:50px;width:143px;position:absolute;top:33%;left:78%;">Waiting = 0</button>
 
 
     <script type = "text/javascript">
@@ -105,70 +105,70 @@
       {
         if(hc == 1)
         {
-          document.getElementById("cust").style.backgroundColor = '#00BFFF';
-          document.getElementById("barber").style.backgroundColor = '#FFFF00';
+          document.getElementById("cust").style.display = 'block';
+          document.getElementById("barber").src = "{% static 'img/awake.png' %}";
         }
         if(hc == 0)
         {
-          document.getElementById("cust").style.backgroundColor = '#DC143C'
-          document.getElementById("barber").style.backgroundColor = '#DCDCDC'
+          document.getElementById("cust").style.display = 'none';
+          document.getElementById("barber").src= "{% static 'img/sleep.png' %}";
         }
         if(queue[0]==1)
         {
-          document.getElementById("one").style.backgroundColor = '#00BFFF';
+          document.getElementById("one").style.display= 'block';
         }
         if(queue[1]==1)
         {
-          document.getElementById("two").style.backgroundColor = '#00BFFF';
+          document.getElementById("two").style.display= 'block';
         }
         if(queue[2]==1)
         {
-          document.getElementById("three").style.backgroundColor = '#00BFFF';
+          document.getElementById("three").style.display= 'block';
         }
         if(queue[3]==1)
         {
-          document.getElementById("four").style.backgroundColor = '#00BFFF';
+          document.getElementById("four").style.display= 'block';
         }
         if(queue[4]==1)
         {
-          document.getElementById("five").style.backgroundColor = '#00BFFF';
+          document.getElementById("five").style.display= 'block';
         }
         if(queue[5]==1)
         {
-          document.getElementById("six").style.backgroundColor = '#00BFFF';
+          document.getElementById("six").style.display= 'block';
         }
         if(queue[6]==1)
         {
-          document.getElementById("seven").style.backgroundColor = '#00BFFF';
+          document.getElementById("seven").style.display= 'block';
         }
 
         if(queue[0]==0)
         {
-          document.getElementById("one").style.backgroundColor = '#FFFFFF';
+          document.getElementById("one").style.display= 'none';
         }
         if(queue[1]==0)
         {
-          document.getElementById("two").style.backgroundColor = '#FFFFFF';
+          document.getElementById("two").style.display= 'none';
         }
         if(queue[2]==0)
         {
-          document.getElementById("three").style.backgroundColor = '#FFFFFF';
+          document.getElementById("three").style.display= 'none';
         }
         if(queue[3]==0)
         {
-          document.getElementById("four").style.backgroundColor = '#FFFFFF';
+          document.getElementById("four").style.display= 'none';
         }
         if(queue[4]==0)
         {
-          document.getElementById("five").style.backgroundColor = '#FFFFFF';
+          document.getElementById("five").style.display= 'none';
         }
         if(queue[5]==0)
         {
-          document.getElementById("six").style.backgroundColor = '#FFFFFF';
+          document.getElementById("six").style.display= 'none';
         }
         if(queue[6]==0)
         {
-          document.getElementById("seven").style.backgroundColor = '#FFFFFF';
+          document.getElementById("seven").style.display= 'none';
         }
         check();
       }
@@ -247,14 +247,14 @@
 
     <div style="color: black;">
       <p style="position:absolute;top:60%;left:79%;font-size:22px"><b> For Barber: </b></p>
-      <button type = "button", style="height:25px;width:25px;position:absolute;top:65%;left:80%;background-color:#DCDCDC"> </button>
+      <img src = "{% static 'img/sleep.png' %}", style="height:25px;width:25px;position:absolute;top:65%;left:80%;">
       <p style="position:absolute;top:65%;left:82%;font-size:20px"> Sleeping </p>
-      <button type = "button", style="height:25px;width:25px;position:absolute;top:70%;left:80%;background-color:#FFFF00"> </button>
+      <img src = "{% static 'img/awake.png' %}", style="height:25px;width:25px;position:absolute;top:70%;left:80%;">
       <p style="position:absolute;top:70%;left:82%;font-size:20px"> Awake </p>
       <p style="position:absolute;top:75%;left:79%;font-size:22px"><b> For Seats: </b></p>
       <button type = "button", style="height:25px;width:25px;position:absolute;top:80%;left:80%;background-color:#FFFFFF"> </button>
       <p style="position:absolute;top:80%;left:82%;font-size:20px"> Available </p>
-      <button type = "button", style="height:25px;width:25px;position:absolute;top:85%;left:80%;background-color:#00BFFF"> </button>
+      <img src = "{% static 'img/man.png' %}", style="height:25px;width:25px;position:absolute;top:85%;left:80%;">
       <p style="position:absolute;top:85%;left:82%;font-size:20px"> Occupied </p>
     </div>
   </div>

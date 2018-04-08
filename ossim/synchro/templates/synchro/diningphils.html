@@ -1,34 +1,81 @@
+
+
 <!DOCTYPE html>
 {% load staticfiles %}
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
-<body>
+<body style="background-color:#FFFFCC">
+
+<style>
+h1  {font-family: arial;}
+h1   {color: red;}
+
+    .rotateimg135 {
+  -webkit-transform:rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);}
+
+        .rotateimg225 {
+  -webkit-transform:rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+        }
+
+    .rotateimg270 {
+  -webkit-transform:rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);}
+
+     .rotateimg90 {
+  -webkit-transform:rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);}
+
+
+</style>
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <div class="container-fluid">
-    <center><h1>Simulation of the Dining Philosopher's semaphore</h1></center>
-    <button type ="button", class = "btn btn-primary", onclick ="initiate()", style="height:150px;width:250px;position:absolute;top:20%;left:5%;font-size:25px"  >Next!</button>
+    <center><h1> Simulation of the Dining Philosopher's Semaphore</h1></center>
+    <button type ="button", class = "btn btn-primary", onclick ="initiate()", style="height:200px;width:200px;position:absolute;top:20%;left:5%;font-size:25px;border-radius:125px;border:1px solid #000"  >Next!</button>
 
-    <button type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:25%;left:75%;font-size:17px">Random number generated: </button>
+    <button type = "button", id ="num", name = "num", class = "btn btn-primary", style="height:70px;width:300px;position:absolute;top:65%;left:5%;font-size:17px;">Corresponding Philosopher : </button>
 
     <button type = "button", id ="table", name = "table", style="height:435px;width:435px;position:absolute;top:23%;left:35%;border-radius:435px;border:1px solid #000;background-color:#CD853F"> </button>
-    <img src="{% static 'img/food.png' %}" alt="Mountain View" style="position:absolute;left:41%;top:37%;width:250px;height:250px;">
+    <img src="{% static 'img/food2.jpg' %}" alt="Mountain View" style="position:absolute;left: 42%;;top:37%;width:220px;height:220px;">
 
-    <button type = "button", id ="one", name = "one", style="height:125px;width:125px;position:absolute;top:12%;left:45%;border-radius:125px;border:1px solid #000"> P1 </button>
-    <button type = "button", id ="five", name = "one", style="height:125px;width:125px;position:absolute;top:35%;left:30%;border-radius:125px;border:1px solid #000"> P5 </button>
-    <button type = "button", id ="two", name = "one", style="height:125px;width:125px;position:absolute;top:35%;left:60%;border-radius:125px;border:1px solid #000"> P2 </button>
-    <button type = "button", id ="four", name = "one", style="height:125px;width:125px;position:absolute;top:68%;left:37%;border-radius:125px;border:1px solid #000"> P4 </button>
-    <button type = "button", id ="three", name = "one", style="height:125px;width:125px;position:absolute;top:68%;left:54%;border-radius:125px;border:1px solid #000"> P3 </button>
 
-    <button type = "button", id ="first", name = "one", style="height:50px;width:50px;position:absolute;top:30%;left:41%;border-radius:50px;border:1px solid #000"> F1 </button>
-    <button type = "button", id ="second", name = "one", style="height:50px;width:50px;position:absolute;top:30%;left:55%;border-radius:50px;border:1px solid #000"> F2 </button>
-    <button type = "button", id ="third", name = "one", style="height:50px;width:50px;position:absolute;top:57%;left:59%;border-radius:50px;border:1px solid #000"> F3 </button>
-    <button type = "button", id ="fifth", name = "one", style="height:50px;width:50px;position:absolute;top:57%;left:36%;border-radius:50px;border:1px solid #000"> F5 </button>
-    <button type = "button", id ="fourth", name = "one", style="height:50px;width:50px;position:absolute;top:72%;left:48%;border-radius:50px;border:1px solid #000"> F4 </button>
+    <img src="{% static 'img/think.png' %}" , id ="one", name = "one", style="height:125px;width:125px;position:absolute;top:12%;left:45%;">  </button>
+      <p style="position:absolute;top:32%;left:49%;color:white;font-size:20px"> 1 </p>
+      <p style="position:absolute;top:43%;left:58%;color:white;font-size:20px"> 2 </p>
+      <p style="position:absolute;top:43%;left:40%;color:white;font-size:20px"> 5 </p>
+      <p style="position:absolute;top:67%;left:55%;color:white;font-size:20px"> 3 </p>
+      <p style="position:absolute;top:67%;left:44%;color:white;font-size:20px"> 4 </p>
+    <img src="{% static 'img/think.png' %}", id ="five", name = "one", style="height:125px;width:125px;position:absolute;top:35%;left:30%">  </button>
+    <img src="{% static 'img/think.png' %}", id ="two", name = "one", style="height:125px;width:125px;position:absolute;top:35%;left:60%;">  </button>
+    <img src="{% static 'img/think.png' %}", id ="four", name = "one", style="height:125px;width:125px;position:absolute;top:69%;left:36%;">  </button>
+    <img src="{% static 'img/think.png' %}", id ="three", name = "one", style="height:125px;width:125px;position:absolute;top:69%;left:55%;">  </button>
+
+
+      <img src="{% static 'img/fork.png' %}" id = "first", alt="Fork" style="position:absolute;left:40%;top:27%;width:70px;height:90px;display: block"class="rotateimg135">
+      <img src="{% static 'img/fork.png' %}"  id = "second", alt="Fork" style="position:absolute;left:54%;top:27%;width:70px;height:90px;display: block"class="rotateimg225">
+      <img src="{% static 'img/fork.png' %}"  id = "third", alt="Fork" style="position:absolute;left:59%;top:54%;width:70px;height:90px;display: block"class="rotateimg270">
+      <img src="{% static 'img/fork.png' %}"  id = "fifth", alt="Fork" style="position:absolute;left:35%;top:54%;width:70px;height:90px;display: block"class="rotateimg90">
+      <img src="{% static 'img/fork.png' %}"  id = "fourth", alt="Fork" style="position:absolute;left:47%;top:70%;width:70px;height:90px;display: block">
 
 
     <script type = "text/javascript">
@@ -41,27 +88,27 @@
           if(n==0)
           {
             var change = document.getElementById("num");
-            change.innerHTML ="Random number generated: 1"
+            change.innerHTML ="Corresponding philosopher : 1"
           }
           if(n==1)
           {
             var change = document.getElementById("num");
-            change.innerHTML ="Random number generated: 2"
+            change.innerHTML ="Corresponding philosopher : 2"
           }
           if(n==2)
           {
             var change = document.getElementById("num");
-            change.innerHTML ="Random number generated: 3"
+            change.innerHTML ="Corresponding philosopher : 3"
           }
           if(n==3)
           {
             var change = document.getElementById("num");
-            change.innerHTML ="Random number generated: 4"
+            change.innerHTML ="Corresponding philosopher : 4"
           }
           if(n==4)
           {
             var change = document.getElementById("num");
-            change.innerHTML ="Random number generated: 5"
+            change.innerHTML ="Corresponding philosopher : 5"
           }
 
           if(phils[n]==0)
@@ -90,127 +137,128 @@
 
           if(phils[0]==0)
           {
-            document.getElementById("one").style.backgroundColor = '#DCDCDC';
+            document.getElementById("one").src="{% static 'img/think.png' %}";
           }
           if(phils[1]==0)
           {
-            document.getElementById("two").style.backgroundColor = '#DCDCDC';
+            document.getElementById("two").src="{% static 'img/think.png' %}";
           }
           if(phils[2]==0)
           {
-            document.getElementById("three").style.backgroundColor = '#DCDCDC';
+            document.getElementById("three").src="{% static 'img/think.png' %}";
           }
           if(phils[3]==0)
           {
-            document.getElementById("four").style.backgroundColor = '#DCDCDC';
+            document.getElementById("four").src="{% static 'img/think.png' %}";
           }
           if(phils[4]==0)
           {
-            document.getElementById("five").style.backgroundColor = '#DCDCDC';
+            document.getElementById("five").src="{% static 'img/think.png' %}";
           }
 
 
 
           if(phils[0]==1)
           {
-            document.getElementById("one").style.backgroundColor = '#FFFF00';
+            document.getElementById("one").src="{% static 'img/hungry.png' %}";
           }
           if(phils[1]==1)
           {
-            document.getElementById("two").style.backgroundColor = '#FFFF00';
+            document.getElementById("two").src="{% static 'img/hungry.png' %}";
           }
           if(phils[2]==1)
           {
-            document.getElementById("three").style.backgroundColor = '#FFFF00';
+            document.getElementById("three").src="{% static 'img/hungry.png' %}";
           }
           if(phils[3]==1)
           {
-            document.getElementById("four").style.backgroundColor = '#FFFF00';
+            document.getElementById("four").src="{% static 'img/hungry.png' %}";
           }
           if(phils[4]==1)
           {
-            document.getElementById("five").style.backgroundColor = '#FFFF00';
+            document.getElementById("five").src="{% static 'img/hungry.png' %}";
           }
 
           if(phils[0]==2)
           {
-            document.getElementById("one").style.backgroundColor = '#FF0000';
+            document.getElementById("one").src="{% static 'img/eating.png' %}";
           }
           if(phils[1]==2)
           {
-            document.getElementById("two").style.backgroundColor = '#FF0000';
+            document.getElementById("two").src="{% static 'img/eating.png' %}";
           }
           if(phils[2]==2)
           {
-            document.getElementById("three").style.backgroundColor = '#FF0000';
+            document.getElementById("three").src="{% static 'img/eating.png' %}";
           }
           if(phils[3]==2)
           {
-            document.getElementById("four").style.backgroundColor = '#FF0000';
+            document.getElementById("four").src="{% static 'img/eating.png' %}";
           }
           if(phils[4]==2)
           {
-            document.getElementById("five").style.backgroundColor = '#FF0000';
+            document.getElementById("five").src="{% static 'img/eating.png' %}";
           }
 
           if(forks[0]==0)
           {
-            document.getElementById("first").style.backgroundColor = '#DCDCDC';
+            document.getElementById("first").style.display = 'block';
           }
           if(forks[1]==0)
           {
-            document.getElementById("second").style.backgroundColor = '#DCDCDC';
+            document.getElementById("second").style.display = 'block';
           }
           if(forks[2]==0)
           {
-            document.getElementById("third").style.backgroundColor = '#DCDCDC';
+            document.getElementById("third").style.display = 'block';
           }
           if(forks[3]==0)
           {
-            document.getElementById("fourth").style.backgroundColor = '#DCDCDC';
+            document.getElementById("fourth").style.display = 'block';
           }
           if(forks[4]==0)
           {
-            document.getElementById("fifth").style.backgroundColor = '#DCDCDC';
+            document.getElementById("fifth").style.display = 'block';
           }
 
 
 
           if(forks[0]==1)
           {
-            document.getElementById("first").style.backgroundColor = '#FF0000';
+            document.getElementById("first").style.display = 'none';
           }
           if(forks[1]==1)
           {
-            document.getElementById("second").style.backgroundColor = '#FF0000';
+            document.getElementById("second").style.display = 'none';
           }
           if(forks[2]==1)
           {
-            document.getElementById("third").style.backgroundColor = '#FF0000';
+            document.getElementById("third").style.display = 'none';
           }
           if(forks[3]==1)
           {
-            document.getElementById("fourth").style.backgroundColor = '#FF0000';
+            document.getElementById("fourth").style.display = 'none';
           }
           if(forks[4]==1)
           {
-            document.getElementById("fifth").style.backgroundColor = '#FF0000';
+            document.getElementById("fifth").style.display = 'none';
           }
       }
     </script>
 
-    <p style="position:absolute;top:60%;left:79%;font-size:22px"><b> For Philosopher: </b></p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:65%;left:80%;background-color:#DCDCDC"> </button>
-    <p style="position:absolute;top:65%;left:82%;font-size:20px"> Thinking </p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:70%;left:80%;background-color:#FFFF00"> </button>
-    <p style="position:absolute;top:70%;left:82%;font-size:20px"> Hungry </p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:75%;left:80%;background-color:#FF0000"> </button>
-    <p style="position:absolute;top:75%;left:82%;font-size:20px"> Eating </p>
-    <p style="position:absolute;top:80%;left:79%;font-size:22px"><b> For Chopsticks: </b></p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:85%;left:80%;background-color:#DCDCDC"> </button>
-    <p style="position:absolute;top:85%;left:82%;font-size:20px"> Available </p>
-    <button type = "button", style="height:25px;width:25px;position:absolute;top:90%;left:80%;background-color:#FF0000"> </button>
-    <p style="position:absolute;top:90%;left:82%;font-size:20px"> Engaged </p>
+
+      <p style="position:absolute;top:60%;left:79%;font-size:22px;font-family:arial"><b><br> Access Legend </p>
+
+      <img src="{% static 'img/think.png' %}", style="height:25px;width:25px;position:absolute;top:70%;left:79%;">  </button>
+    <p style="position:absolute;top:70%;left:82%;font-size:20px;font-family:Helvetica"> Thinking </p>
+
+    <img src="{% static 'img/hungry.png' %}", style="height:25px;width:25px;position:absolute;top:75%;left:79%;"> </button>
+    <p style="position:absolute;top:75%;left:82%;font-size:20px;font-family:Helvetica"> Hungry </p>
+
+    <img src="{% static 'img/eating.png' %}", style="height:25px;width:25px;position:absolute;top:80%;left:79%;"> </button>
+    <p style="position:absolute;top:80%;left:82%;font-size:20px;font-family:Helvetica"> Eating </p>
+
+
 
   </div>
 </body>

@@ -6,7 +6,7 @@
         width: 953px;
         height: 5px;
         position: absolute;
-        background: white;
+        background-color: #FFFFCC;
         top: 88%;
         left: 18%;
     }
@@ -15,29 +15,29 @@
         width: 50px;
         height: 5px;
         position: absolute;
-        background-color: white;
+        background-color: #FFFFCC;
         top: 0%;
         left: 0%;
         opacity: 0;
     }
     
     #har {
-        background-color: #2F2F4F;
+        background-color: #FFFFCC;
     }
     
     .css-typing p {
         border-right: .15em solid orange;
         font-family: "Courier";
-        font-size: 14px;
-        color: white;
+        font-size: 24px;
+        color: black;
         white-space: nowrap;
         overflow: hidden;
     }
     
     .css-typing p:nth-child(1) {
-        width: 67em;
-        2 -webkit-animation: type 12s steps(100, end);
-        animation: type 12s steps(100, end);
+        width: 62em;
+        2 -webkit-animation: type 8s steps(100, end);
+        animation: type 8s steps(100, end);
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
@@ -91,7 +91,7 @@
     <div class="container-fluid" id="har">
         <div class=" panel panel-heading " id="har">
             <center>
-                <h1 style="color: white;">TCP socket programming</h1>
+                <h1>TCP socket programming</h1>
 
             </center>
 
@@ -102,14 +102,15 @@
             <nav role="navigation " class="navbar navbar-inverse ">
                 <div id="navbarCollapse " class="collapse navbar-collapse ">
                     <ul class="nav navbar-nav ">
-                         <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Socket">Socket</a></li>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Socket">Socket</a></li>
                         <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Bind">Bind</a></li>
                         <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Listen">Listen</a></li>
                         <li class="active" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Connect">Connect</a></li>
                         <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Accept">Accept</a></li>
                         <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Receive">Receive</a></li>
                         <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Send">Send</a></li>
-                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Close">Close</a></li></ul>
+                        <li class="disabled" style="padding-left: 55px;padding-right: 55px"><a href="/synchro/socket/Close">Close</a></li>
+                    </ul>
                     </ul>
                 </div>
             </nav>
@@ -117,18 +118,18 @@
 
         </div>
         <div class="css-typing">
-            <p>This function shall mark a connection-mode socket, specified by the socket argument, as accepting connections.</p>
+            <p>This function mark a connection-mode socket, specified by the socket argument, as accepting connections.</p>
         </div>
 
-        <button type="button " , id="server " , name="server " , style="height:125px;width:125px;position:absolute;top:55%;left:10%;border-radius:125px;border:1px solid #2F2F4F; background-color: skyblue">Server </button>
-        <button type="button " , id="client " , name="client " , style="height:125px;width:125px;position:absolute;top:30%;left:80%;border-radius:125px;border:1px solid #2F2F4F; background-color: yellow ">Client </button>
-        <button type="button " , id="client2 " , name="client2 " , style="height:125px;width:125px;position:absolute;top:80%;left:80%;border-radius:125px;border:1px solid #2F2F4F; background-color: yellow">Client2 </button>
-        <button type="button " , id="one " , name="one " , style="height:30px;width:30px;position:absolute;top:56%;left:18%;border-radius:30px;border:1px solid #2F2F4F;background-color:skyblue"></button>
-        <button type="button " , id="three " , name="three " , style="height:30px;width:30px;position:absolute;top:66%;left:18%;border-radius:30px;border:1px solid #2F2F4F;background-color:skyblue"></button>
-        <button type="button " , id="four " , name="four " , style="height:30px;width:30px;position:absolute;top:52%;left:20%;border-radius:30px;border:1px solid #2F2F4F;background-color:skyblue"></button>
-        <button type="button " , id="six " , name="six " , style="height:30px;width:30px;position:absolute;top:70%;left:20%;border-radius:30px;border:1px solid #2F2F4F;background-color:skyblue"></button>
-        <button type="button " , id="connection " , name="connection " , style="height:5px;width:966px;position:absolute;top:50%;left:17.6%;transform: rotate(170deg);background-color:#2F2F4F;border:1px solid #2F2F4F "> </button>
-        <button type="button " , id="connection " , name="connection " , style="height:5px;width:966px;position:absolute;top:75%;left:17.6%;transform: rotate(10deg);background-color:#2F2F4F;border:1px solid #2F2F4F "> </button>
+        <button type="button " , id="server " , name="server " , style="color: white;height:125px;width:125px;position:absolute;top:55%;left:10%;border-radius:125px;border:1px solid red; background-color: blue">Server </button>
+        <button type="button " , id="client " , name="client " , style="height:125px;width:125px;position:absolute;top:30%;left:80%;border-radius:125px;border:1px solid red; background-color: skyblue">Client </button>
+        <button type="button " , id="client2 " , name="client2 " , style="height:125px;width:125px;position:absolute;top:80%;left:80%;border-radius:125px;border:1px solid red; background-color: skyblue">Client2 </button>
+        <button type="button " , id="one " , name="one " , style="height:30px;width:30px;position:absolute;top:56%;left:18%;border-radius:30px;border:1px solid red;background-color:blue"></button>
+        <button type="button " , id="three " , name="three " , style="height:30px;width:30px;position:absolute;top:66%;left:18%;border-radius:30px;border:1px solid red;background-color:blue"></button>
+        <button type="button " , id="four " , name="four " , style="height:30px;width:30px;position:absolute;top:52%;left:20%;border-radius:30px;border:1px solid red;background-color:blue"></button>
+        <button type="button " , id="six " , name="six " , style="height:30px;width:30px;position:absolute;top:70%;left:20%;border-radius:30px;border:1px solid red;background-color:blue"></button>
+        <button type="button " , id="connection " , name="connection " , style="height:5px;width:966px;position:absolute;top:50%;left:17.6%;transform: rotate(170deg);background-color:#FFFFCC;border:1px solid #FFFFCC "> </button>
+        <button type="button " , id="connection " , name="connection " , style="height:5px;width:966px;position:absolute;top:75%;left:17.6%;transform: rotate(10deg);background-color:#FFFFCC;border:1px solid #FFFFCC "> </button>
         <div id="container ">
             <div id="animate "></div>
         </div>

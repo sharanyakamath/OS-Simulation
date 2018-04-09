@@ -1,7 +1,4 @@
-
-
 def fifo(data):
-    print("reached here")
     cache_size = data["size"]
     requests = data["requests"]
     cache = [-1 for _ in range(cache_size)]
@@ -9,7 +6,7 @@ def fifo(data):
 
 
     output = {}
-    output["states"] = [];
+    output["states"] = []
 
     victim = 0
     hit = 0
@@ -27,7 +24,7 @@ def fifo(data):
     		state = { "status": "H",
     				  "cache": " ".join(str(e) for e in cache)  }
 
-    		hit = hit + 1;
+    		hit = hit + 1
 
     	else:
     		cache[victim] = request
@@ -40,7 +37,7 @@ def fifo(data):
     	output["states"].append(state)
     output["hits"] = hit
     output["miss"] = n - hit
-    output["hit-ratio"] = round(float(hit)/n,2);
+    output["hit-ratio"] = round(float(hit)/n,2)
 
     return output
 
@@ -54,7 +51,7 @@ def lru(data):
 
 
 	output = {}
-	output["states"] = [];
+	output["states"] = []
 
 	victim = 0
 	hit = 0
@@ -71,7 +68,7 @@ def lru(data):
 			indx = -1
 
 		if( indx != -1):
-			hit = hit + 1;
+			hit = hit + 1
 			last_used[indx] = time
 			state = { "status": "H",
 					  "cache": " ".join(str(e) for e in cache) ,
@@ -97,7 +94,7 @@ def lru(data):
 
 	output["hits"] = hit
 	output["miss"] = n - hit
-	output["hit-ratio"] = round(float(hit)/n,2);
+	output["hit-ratio"] = round(float(hit)/n,2)
 
 	return output
 
@@ -106,7 +103,7 @@ def opt(data):
 	requests = data["requests"]
 	cache = [-1 for _ in range(cache_size)]
 	output = {}
-	output["states"] = [];
+	output["states"] = []
 
 	victim = 0
 	hit = 0
@@ -123,7 +120,7 @@ def opt(data):
 			indx = -1
 
 		if( indx != -1):
-			hit = hit + 1;
+			hit = hit + 1
 			state = { "status": "H",
 					  "cache":" ".join(str(e) for e in cache),
 					  "opt": " ".join(str(e) for e in last_to_use) }
@@ -159,7 +156,55 @@ def opt(data):
 
 	output["hits"] = hit
 	output["miss"] = n - hit
-	output["hit-ratio"] = round(float(hit)/n,2);
+	output["hit-ratio"] = round(float(hit)/n,2)
+
+	return output
+
+
+def second_chance(data):
+	cache_size = data["size"]
+	requests = data["requests"]
+	cache = [-1 for _ in range(cache_size)]
+	last_used = [0 for _ in range(cache_size)]
+
+	output = {}
+	output["states"] = []
+
+	pos = -1
+	victim = 0
+	hit = 0
+	n = len(requests)
+	indx = -1
+
+
+	for request in requests:
+		try:
+			indx = cache.index(request)
+		except ValueError:
+			indx = -1
+
+		if (indx != -1):
+			hit = hit + 1
+			last_used[indx] = 1
+			state = {"status": "H",
+					 "cache": " ".join(str(e) for e in cache)}
+			output["states"].append(state)
+
+
+		else:
+			pos = (pos + 1) % cache_size
+			while(last_used[pos] == 1):
+				last_used[pos] = 0
+				pos = (pos + 1) % cache_size
+			cache[pos] = request
+
+			state = {"status": "M",
+					 "cache": " ".join(str(e) for e in cache)}
+			output["states"].append(state)
+
+		output["hits"] = hit
+	output["miss"] = n - hit
+	output["hit-ratio"] = round(float(hit) / n, 2)
 
 	return output
 

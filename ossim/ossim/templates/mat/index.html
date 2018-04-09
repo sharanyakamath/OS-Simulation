@@ -26,39 +26,74 @@
             Memory Management Techniques
         </h1>
     </div>
-    <div id="middle-content" style="margin-top:15%;">
-    	<div class="w3-animate-top">
-        <h3 style="text-align: center">What do you want to see?</h3>
-        <br>
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3" style="text-align: center;">
-            	<div class="w3-animate-left">
-            	<div class="card bg-primary" style="width: 21rem; height: 13rem;" style="text-align: center;">
-            		<br>
-                <a href="{% url 'mat:mat-get-data' %}">
-                <div id="link" style="margin-left: 25%;">
-                    <h3 style = "color: white">MFT</h3>
-                </div>
-                </a>
-            </div>
-        </div>
-            </div>
-            <div style="text-align: center; position: relative; left: 10%;">
-            	<div class="w3-animate-right">
-            	<div class="card bg-primary" style="width: 21rem; height: 13rem;" style="text-align: center">
-            		<br>
-                <a href="{% url 'mat:mvt-get-data' %}">
-                <div id="link" style="margin-left:25%;">
-                    <h3 style= "color: white">MVT</h3>
-                </div>
-                </a>
-            </div>
-        </div>
-            </div>
-        </div>
-    </div>
+ <div class="c" style="position: absolute; top:30%; left:27%">
+ 	<div style="position: absolute; left: 150%;">
+	<div class="card">
+	<a href="{% url 'mat:mat-get-data' %}">
+	  <img src="{% static 'img/MFT.png' %}" alt="Avatar">
+	   </a>
+	  <div class="container">
+	    <h4 style="color: black"><b>MFT</b></h4>
+	  </div>
 </div>
 </div>
+
+<div class="card">
+<a href="{% url 'mat:mvt-get-data' %}">
+  <img src="{% static 'img/MVT.png' %}"  alt="Avatar">
+   </a>
+  <div class="container">
+    <h4><b>MVT</b></h4>
+  </div>
+
+</div>
+</div>
+<style>
+.card {
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.8);
+    transition: 0.3s;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    border-color: white;
+    border-width: 2px;
+    padding: 0px;
+    margin: 30px;
+    background-color: yellow;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+html,body{
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+img {
+    border-radius: 5px 5px 0 0;
+    border-color: black;
+    border-width: 2px;
+    width: 200px;
+    height: 200px;
+}
+.container {
+    padding: 2px 16px;
+    text-align: center;
+}
+.c{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color: black;
+}
+    body{
+        background-color: #CEFAE9;
+    }
+    h1
+    {
+        background-color: #57BF8E;
+        padding: 10px;
+        color: black;
+    }
+</style>
 </body>
 </html>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
     <link rel="stylesheet" href="{% static 'css/mft/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
 
 
     <!-- JavaScript Additional Files -->
@@ -24,15 +25,15 @@
     var blockSize = {{ block_size|safe }};
     console.log(blockSize[1]);
 </script>
-<body>
+<body style="background-color: #FFFFCC; color: black">
 <div class="container-fluid">
     <div id="page-heading">
         <h1>Memory Allocation Techniques</h1>
     </div>
     <div id="selection-form">
-        <button type="button" id="first-fit-select" class="btn btn-default">First-Fit</button>
-        <button type="button" id="best-fit-select" class="btn btn-default">Best-Fit</button>
-        <button type="button" id="worst-fit-select" class="btn btn-default">Worst-Fit</button>
+        <button type="button" id="first-fit-select" class="btn btn-default w3-animate-left">First-Fit</button>
+        <button type="button" id="best-fit-select" class="btn btn-default w3-animate-bottom">Best-Fit</button>
+        <button type="button" id="worst-fit-select" class="btn btn-default w3-animate-right">Worst-Fit</button>
     </div>
     <div id="demo-box">
         <div class="col-sm-6" id="left-box">

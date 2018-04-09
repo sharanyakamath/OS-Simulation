@@ -31,3 +31,19 @@
 #link:hover{
     background: rgba(105, 105, 105, 0.4);
 }
+#lichoice{
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+    padding: 20px;
+    font-family: Courier;
+    font-size: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-align: center;
+    border-style: double;
+    border-color: #000000;
+    border-radius: 10px;
+    /*background-color: #2E8B57*/
+
+}

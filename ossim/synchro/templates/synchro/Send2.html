@@ -5,7 +5,7 @@
         width: 966px;
         height: 5px;
         position: absolute;
-        background: #2F2F4F;
+        background: #FFFFCC;
         top: 50%;
         left: 17.6%;
         transform: rotate(-10deg);
@@ -15,7 +15,7 @@
         width: 966px;
         height: 5px;
         position: absolute;
-        background: #2F2F4F;
+        background: #FFFFCC;
         top: 75%;
         left: 17.6%;
         transform: rotate(10deg);
@@ -25,7 +25,7 @@
         width: 50px;
         height: 5px;
         position: absolute;
-        background-color: #2F2F4F;
+        background-color: #FFFFCC;
         top: 0%;
         left: 0%;
         opacity: 0;
@@ -37,7 +37,7 @@
         width: 50px;
         height: 5px;
         position: absolute;
-        background-color: #2F2F4F;
+        background-color: #FFFFCC;
         top: 0%;
         left: 0%;
         opacity: 0;
@@ -46,25 +46,35 @@
     }
     
     #har {
-        background-color: #2F2F4F;
+        background-color: #FFFFCC;
     }
     
     .css-typing p {
         border-right: .15em solid orange;
         font-family: "Courier";
-        font-size: 14px;
-        color: white;
+        font-size: 24px;
+        color: black;
         white-space: nowrap;
         overflow: hidden;
     }
     
     .css-typing p:nth-child(1) {
-        width: 79em;
+        width: 60em;
         -webkit-animation: type 8s steps(100, end);
         animation: type 8s steps(100, end);
         -webkit-animation-fill-mode: forwards;
         animation-fill-mode: forwards;
     }
+           .css-typing p:nth-child(2) {
+  width: 20em;
+  opacity: 0;
+  -webkit-animation: type2 4s steps(40, end);
+  animation: type2 2s steps(40, end);
+  -webkit-animation-delay: 8s;
+  animation-delay: 8s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+} 
     
     @keyframes type {
         0% {
@@ -89,7 +99,36 @@
             border: none;
         }
     }
-    
+        @keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
+}
+
+@-webkit-keyframes type2 {
+  0% {
+    width: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  99.9% {
+    border-right: .15em solid orange;
+  }
+  100% {
+    opacity: 1;
+    border: none;
+  }
     @keyframes blink {
         50% {
             border-color: transparent;
@@ -116,7 +155,7 @@
         <div>
             <div>
                 <center>
-                    <h1 style="color: white;">UDP socket programming</h1>
+                    <h1>UDP socket programming</h1>
                 </center>
             </div>
 
@@ -135,12 +174,12 @@
             </div>
             <button id="move" class="btn btn-primary" type="button" , onclick="myMove()" , style="height:25px;width:125px;line-height:1">Send()</button>
             <div class="css-typing">
-                <p>This function sends a message to a given destination address through a connectionless-mode socket.Click on send() button to send.</p>
+                <p>This function sends a message to a given destination address through a connectionless-mode socket.</p><p>Click on send() button to send.</p>
             </div>
 
-            <button type="button" , id="server" , name="server" , style="height:125px;width:125px;position:absolute;top:55%;left:10%;border-radius:125px;border:1px solid #2F2F4F; background-color: skyblue">Server </button>
-            <button type="button" , id="client" , name="client" , style="height:125px;width:125px;position:absolute;top:30%;left:80%;border-radius:125px;border:1px solid #2F2F4F; background-color: skyblue">Client </button>
-            <button type="button" , id="client2" , name="client2" , style="height:125px;width:125px;position:absolute;top:80%;left:80%;border-radius:125px;border:1px solid #2F2F4F; background-color: skyblue">Client2 </button>
+            <button type="button" , id="server" , name="server" , style="color: white;height:125px;width:125px;position:absolute;top:55%;left:10%;border-radius:125px;border:1px solid red; background-color: blue">Server </button>
+            <button type="button" , id="client" , name="client" , style="color: white;height:125px;width:125px;position:absolute;top:30%;left:80%;border-radius:125px;border:1px solid red; background-color: blue">Client </button>
+            <button type="button" , id="client2" , name="client2" , style="color: white;height:125px;width:125px;position:absolute;top:80%;left:80%;border-radius:125px;border:1px solid red; background-color: blue">Client2 </button>
 
             <div id="container">
                 <div id="animate"></div>
@@ -152,8 +191,8 @@
             <script type="text/javascript">
                 function myMove() {
 
-                    document.getElementById("container").style.backgroundColor = '#FF0000';
-                    document.getElementById("animate").style.backgroundColor = '#00FF00';
+                    document.getElementById("container").style.backgroundColor = '#FFFFCC';
+                    document.getElementById("animate").style.backgroundColor = '#FF0000';
                     document.getElementById("animate").style.opacity = "1.0";
                     var elem = document.getElementById("animate");
                     var pos = 0;
@@ -174,16 +213,16 @@
                 function myMove2() {
 
 
-                    document.getElementById("container").style.backgroundColor = '#FF0000';
+                    document.getElementById("container").style.backgroundColor = '#FFFFCC';
 
-                    document.getElementById("animate").style.backgroundColor = '#00FF00';
+                    document.getElementById("animate").style.backgroundColor = '#FF0000';
                     document.getElementById("animate").style.opacity = "1.0";
                     var elem = document.getElementById("animate");
                     var pos = 0;
 
-                    document.getElementById("container2").style.backgroundColor = '#FF0000';
+                    document.getElementById("container2").style.backgroundColor = '#FFFFCC';
 
-                    document.getElementById("animate2").style.backgroundColor = '#00FF00';
+                    document.getElementById("animate2").style.backgroundColor = '#FF0000';
                     document.getElementById("animate2").style.opacity = "1.0";
                     var elem = document.getElementById("animate2");
                     var pos = 0;

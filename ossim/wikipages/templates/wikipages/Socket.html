@@ -5,7 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 <!--<![endif]-->
-
+<body style="background-color:powderblue;">
 <head>
 
     <meta charset="utf-8">
@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="big-title text-center">
-                            <h1>Socket Programming</h1>
+                            <h1><i>Socket Programming</i></h1>
                         </div>
                         <!-- end title -->
                     </div>
@@ -60,57 +60,29 @@
             </section>
             <!-- end section -->
 
-            <div class="row">
-
-                <div class="col-md-3">
-                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
-                        <ul class="nav">
-                            <li><a href="#line1">Introduction</a></li>
-                            <li><a href="#line2">Stream Sockets</a>
-                              <ul class="nav">
-                                  <li><a href="#line2_1">Description</a></li>
-                                  <li><a href="#line2_2">TCP</a></li>
-                                  <!-- <li><a href="#line2_31">Example</a></li> -->
-                              </ul>
-                            </li>
-                            <li><a href="#line3">Datagram Sockets</a>
-                              <ul class="nav">
-                                  <li><a href="#line3_1">Description</a></li>
-                                  <li><a href="#line3_21">UDP</a></li>
-                                  <!-- <li><a href="#line3_3">Example</a></li> -->
-                              </ul>
-                            </li>
-                        </ul>
-                    </nav >
-                </div>
+    
+                                   <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h1>Contributors: Chetan Prajapati</h1>
+                            </div>
+       
                 <div class="col-md-9">
                     <section id = "line1" class="welcome">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Introduction<hr></h2>
+                                <h2 class="dark-text"><i>Introduction</i><hr></h2>
                                 <div class="row">
-
-                                    <div class="col-md-12 full">
-                                        <div class="intro1">
-                                            <ul>
-                                                <!-- <li><strong>Demo Page : </strong><a href="http://themeforest.net/user/surjithctly" target="_blank">Click Here</a></li> -->
-                                                <li><strong>Front End Developers : </strong>Akhil Udathu</li>
-                                                <li><strong>Backend End Developers : </strong>Akhil Udathu</li>
-                                                <li><strong>Server Side Integration : </strong>Sagar Bharadwaj</li>
-                                                <li><strong>Content : </strong>Akhil Udathu</li>
-                                            </ul>
-                                        </div>
 
                                         <hr>
                                         <div>
-                                            <p>A socket is one of the most fundamental technologies of computer network programming. Sockets allow network software applications to communicate using standard mechanisms built into network hardware and operating systems.
+                                            <p>A socket is one of the most fundamental technologies of computer network programming. 
                                             </p>
 
                                             <p>A socket represents a single connection between exactly two pieces of software (a so-called point-to-point connection). More than two pieces of software can communicate with client/server or distributed systems by using multiple sockets.
                                             </p>
 
-                                            <p>Socket-based software usually runs on two separate computers on the network, but sockets can also be used to communicate locally (inter-process) on a single computer. Sockets are bidirectional, meaning that either side of the connection is capable of both sending and receiving data. The one application that initiates communication is termed the "client" and the other application the "server"
+                                            <p>Socket programming is a way of connecting two nodes on a network to communicate with each other. One socket(node) listens on a particular port at an IP, while other socket reaches out to the other to form a connection.The one application that initiates communication is termed the "client" and the other application the "server" Server forms the listener socket while client reaches out to the server.Socket-based software usually runs on two separate computers on the network, but sockets can also be used to communicate locally (inter-process) on a single computer. Sockets are bidirectional, meaning that either side of the connection is capable of both sending and receiving data. 
                                             </p>
 
                                             <h4>Types of Protocols</h4>
@@ -127,31 +99,15 @@
                     <hr>
                     </section>
 
-                    <section id="line2" class="section">
-
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Stream Sockets<a href="#top">#back to top</a><hr></h2>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                                <h4 id="line2_1">Description</h4>
-                                <p>Delivery in a networked environment is guaranteed. If you send through the stream socket three items "A, B, C", they will arrive in the same order − "A, B, C". These sockets use TCP (Transmission Control Protocol) for data transmission. If delivery is impossible, the sender receives an error indicator. Data records do not have any boundaries.</p><!-- end col -->
-                        </div>
-                        <!-- end row -->
-
                         <hr>
                         <div class="row">
-                                <h4 id="line2_2">Salient Features of TCP</h4>
+                            <div class="col-md-12 left-align">
+                                <h4 id="line3_21">Key Features of TCP</h4>
                                 <ol>
                                     <li>Connection oriented protocol</li>
-                                    <li>Reliable service</li>
-                                    <li>Uses Stream Sockets</li>
+                                    <li>Ordered data transfer: the destination host rearranges according to sequence number-flow control</li>
+                                    <li>Error-free data transfer-reliable service</li>
                                     <li>Based on acknowledgments</li>
-                                    <li>Manages flow control i.e. order of datagrams will be preserved</li>
                                     <li>Generally used when data is to be transferred to a central server in a reliable manner</li>
                                 </ol>
                             <!-- end col -->
@@ -165,32 +121,18 @@
                             <h4>Demo</h4>
                         </div> -->
 
-                    </section>
-                    <!-- end section -->
-
-                    <section id="line3" class="section">
-                        <div class="row">
-                            <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Datagram Sockets<a href="#top">#back to top</a><hr></h2>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                                <h4 id="line3_1">Description</h4>
-                                <p>Delivery in a networked environment is not guaranteed. They're connectionless because you don't need to have an open connection as in Stream Sockets − you build a packet with the destination information and send it out. They use UDP (User Datagram Protocol).</p><!-- end col -->
-                        </div>
-                        <!-- end row -->
+                   
 
                         <hr>
                         <div class="row">
-                                <h4 id="line3_21">Salient Features of UDP</h4>
+                            <div class="col-md-12 left-align">
+                                <h4 id="line3_21">Key Features of UDP</h4>
                                 <ol>
                                   <li>Connection-less protocol</li>
-                                  <li>Uses Datagram sockets</li>
+                                  <li>Unreliable service</li>
+                                  <li>No acknowledgements</li>
+                                  <li>Used when socket is opened in datagram mode</li>
                                   <li>Message is encapsulated in a datagram</li>
-                                  <li>Each datagram is characterized by a length</li>
                                   <li>Generally used when client requires a certain service from the server</li>
                                 </ol>
                             <!-- end col -->

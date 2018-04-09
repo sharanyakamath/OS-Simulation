@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
     <link rel="stylesheet" href="{% static 'css/mvt/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/w3.css' %}">
 
 
     <!-- JavaScript Additional Files -->
@@ -25,15 +24,16 @@
       var totalMemoryQueue = {{ inputMemory }};
   </script>
 
-  <body style="background-color: #FFFFCC; color: black">
+  <body>
+
     <div class="container-fluid">
       <div id="page-heading">
           <h1>Multiprogramming With Variable Number of Tasks <br> </h1>
       </div>
       <div id="selection-form">
-          <button type="button" id="first-fit-select" class="btn btn-default w3-animate-left">First-Fit</button>
-          <button type="button" id="best-fit-select" class="btn btn-default w3-animate-bottom">Best-Fit</button>
-          <button type="button" id="worst-fit-select" class="btn btn-default w3-animate-right">Worst-Fit</button>
+          <button type="button" id="first-fit-select" class="btn btn-default">First-Fit</button>
+          <button type="button" id="best-fit-select" class="btn btn-default">Best-Fit</button>
+          <button type="button" id="worst-fit-select" class="btn btn-default">Worst-Fit</button>
       </div>
 
       <div id="demo-box">

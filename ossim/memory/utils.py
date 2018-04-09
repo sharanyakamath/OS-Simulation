@@ -1,4 +1,5 @@
 def fifo(data):
+    print("reached here")
     cache_size = data["size"]
     requests = data["requests"]
     cache = [-1 for _ in range(cache_size)]
@@ -165,7 +166,6 @@ def second_chance(data):
 	cache_size = data["size"]
 	requests = data["requests"]
 	cache = [-1 for _ in range(cache_size)]
-	last_used = [0 for _ in range(cache_size)]
 
 	output = {}
 	output["states"] = []
@@ -175,9 +175,10 @@ def second_chance(data):
 	hit = 0
 	n = len(requests)
 	indx = -1
-
+	last_used = [0 for _ in range(cache_size)]
 
 	for request in requests:
+
 		try:
 			indx = cache.index(request)
 		except ValueError:
@@ -187,20 +188,26 @@ def second_chance(data):
 			hit = hit + 1
 			last_used[indx] = 1
 			state = {"status": "H",
-					 "cache": " ".join(str(e) for e in cache)}
+					 "cache": " ".join(str(e) for e in cache),
+					 "second_chance": " ".join(str(e) for e in last_used)}
 			output["states"].append(state)
 
 
 		else:
-			pos = (pos + 1) % cache_size
-			while(last_used[pos] == 1):
-				last_used[pos] = 0
+			if (-1 in cache):
+				victim = cache.index(-1)
+				cache[victim] = request
+			else:
 				pos = (pos + 1) % cache_size
-			cache[pos] = request
+				while (last_used[pos] == 1):
+					last_used[pos] = 0
+					pos = (pos + 1) % cache_size
+				cache[pos] = request
 
-			state = {"status": "M",
-					 "cache": " ".join(str(e) for e in cache)}
-			output["states"].append(state)
+		state = {"status": "M",
+				 "cache": " ".join(str(e) for e in cache),
+				 "second_chance": " ".join(str(e) for e in last_used)}
+		output["states"].append(state)
 
 		output["hits"] = hit
 	output["miss"] = n - hit

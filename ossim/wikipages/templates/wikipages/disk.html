@@ -5,7 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 <!--<![endif]-->
-
+<body style="background-color:powderblue;">
 <head>
 
     <meta charset="utf-8">
@@ -46,8 +46,8 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="big-title text-center">
-                            <h1>Disk Scheduling Algorithms</h1>
+                        <div class="big-title text-center ">
+                            <h1><i>Disk Scheduling Algorithms</i></h1>
                         </div>
                         <!-- end title -->
                     </div>
@@ -59,79 +59,41 @@
 
             </section>
             <!-- end section -->
-
-            <div class="row">
-
-                <div class="col-md-3">
-                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
-                        <ul class="nav">
-                            <li><a href="#line1">Introduction</a></li>
-                            <li><a href="#line2">FCFS</a>
-                              <ul class="nav">
-                                  <li><a href="#line2_1">Description</a></li>
-                                  <li><a href="#line2_2">Advantages</a></li>
-                                  <li><a href="#line2_3">Disadvantages</a></li>
-                                  <!-- <li><a href="#line2_4">Example</a></li> -->
-                              </ul>
-                            </li>
-                            <li><a href="#line3">SSTF</a>
-                              <ul class="nav">
-                                  <li><a href="#line3_1">Description</a></li>
-                                  <li><a href="#line3_2">Advantages</a></li>
-                                  <li><a href="#line3_3">Disadvantages</a></li>
-                                  <!-- <li><a href="#line3_4">Example</a></li> -->
-                              </ul>
-                            </li>
-                            <li><a href="#line4">SCAN</a>
-                              <ul class="nav">
-                                  <li><a href="#line4_1">Description</a></li>
-                                  <li><a href="#line4_2">Advantages</a></li>
-                                  <li><a href="#line4_3">Disadvantages</a></li>
-                                  <!-- <li><a href="#line4_4">Example</a></li> -->
-                              </ul>
-                            </li>
-                            <li><a href="#line5">LOOK</a>
-                              <ul class="nav">
-                                  <li><a href="#line5_1">Description</a></li>
-                                  <li><a href="#line5_2">Advantages</a></li>
-                                  <!-- <li><a href="#line5_3">Example</a></li> -->
-                              </ul>
-                            </li>
-                          </li>
-                          <li><a href="#line6">C-SCAN/C-LOOK</a>
-                            <ul class="nav">
-                                <li><a href="#line6_1">Description</a></li>
-                                <!-- <li><a href="#line6_2">Example</a></li> -->
-                            </ul>
-                          </li>
-                        </ul>
-                    </nav >
-                </div>
+<div class="row">
+                            <div class="col-md-12 left-align">
+                                <h1>Contributors: Vijay Rathod</h1>
+                            </div>
+           
                 <div class="col-md-9">
                     <section id = "line1" class="welcome">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Introduction<hr></h2>
+                                <h2 class="dark-text"><i>Introduction</i><hr></h2>
                                 <div class="row">
 
-                                    <div class="col-md-12 full">
-                                        <div class="intro1">
-                                            <ul>
-                                                <!-- <li><strong>Demo Page : </strong><a href="http://themeforest.net/user/surjithctly" target="_blank">Click Here</a></li> -->
-                                                <li><strong>Front End Developers : </strong>Arvind Sai K</li>
-                                                <li><strong>Backend End Developers : </strong>Aneesh Aithal, Derik Clive, Puneet U, Karthik M</li>
-                                                <li><strong>Server Side Integration : </strong>Kaushik S Kalmady</li>
-                                                <li><strong>Content : </strong>Puneet U</li>
-                                            </ul>
-                                        </div>
 
                                         <hr>
                                         <div>
-                                            <p>In multi-programmed systems, one of the most important tasks is scheduling the use of shareable resources by various processes. Disk Scheduling is done by the operating systems to schedule IO requests arriving for disk.
+                                            <p> Disk Scheduling is done by the operating systems to schedule IO requests arriving for disk.
                                             </p>
 
-                                            <p>The file system may reside entirely on a single disk, or it may spread out on a number of disks. Thus all processes that ask for disk IO services are competing for access to the same physical disk or set of physical disks. (Note that all processes must do at least one burst of disk IO to initially load a program to run.) Any given disk can perform only one access at a time. Thus if there are several processes requesting for an access, the operating system must establish some order for the service of requests.</p>
+                                            <p>Disk scheduling is important because:
+
+Multiple I/O requests may arrive by different processes and only one I/O request can be served at a time by disk controller. Thus other I/O requests need to wait in waiting queue and need to be scheduled.
+Two or more request may be far from each other so can result in greater disk arm movement.
+Hard drives are one of the slowest parts of computer system and thus need to be accessed in an efficient manne</p>
+                                            <p>Important Terms:
+
+<li>Seek Time:Seek time is the time taken to locate the disk arm to a specified track where the data is to be read or write. So the disk scheduling algorithm that gives minimum average seek time is better</li>
+<li>Rotational Latency: Rotational Latency is the time taken by the desired sector of disk to rotate into a position so that it can access the read/write heads. So the disk scheduling algorithm that gives minimum rotational latency is better</li>
+<li>Transfer Time: Transfer time is the time to transfer the data. It depends on the rotating speed of the disk and number of bytes to be transferred</li>
+<li>Disk Access Time: Disk Access Time is:
+             
+      Disk Access Time = Seek Time + 
+                         Rotational Latency + 
+                         Transfer Time</li></p>
+
 
                                             <h4>Types</h4>
                                             <p>There are 6 types</p>
@@ -156,14 +118,14 @@
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h3 class="dark-text">First In First Out<a href="#top">#back to top</a><hr></h3>
+                                <h3 class="dark-text"><i>First In First Out</i><hr></h3>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line2_1">Description</h4>
+                                <h4 id="line2_1">About</h4>
                                 <p>This is the simplest approach among the available, but way too simple to be used. As the name suggests, the requests are served in the same order as they arrive.</p>
                                 <!-- end col -->
                         </div>
@@ -171,7 +133,7 @@
 
                         <hr>
                         <div class="row">
-                                <h4 id="line2_2">Advantages</h4>
+                                <h4 id="line2_2">Merits</h4>
                                 <ol>
                                     <li>Simple to use and understand.</li>
                                     <li>No indefinite postponing of service to a request. (No starvation)</li>
@@ -181,7 +143,7 @@
                         <hr>
 
                         <div class="row">
-                                <h4 id="line2_3">Disadvantages</h4>
+                                <h4 id="line2_3">Demerits</h4>
                                 <ol>
                                     <li>Does not try to improve the seek time</li>
                                     <li>May not provide the best possible service</li>
@@ -210,14 +172,14 @@
                         <hr>
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h3 class="dark-text">Shortest Seek Time First<a href="#top">#back to top</a><hr></h3>
+                                <h3 class="dark-text"><i>Shortest Seek Time First</i><hr></h3>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line3_1">Description</h4>
+                                <h4 id="line3_1">About</h4>
                                 <p>The header moves to the request which is nearest to the current position of the header.  So the seek of every request is calculated in advance in the queue and then scheduled according to the calculated seek time.
                                 </p>
                                 <!-- end col -->
@@ -226,7 +188,7 @@
 
                         <hr>
                         <div class="row">
-                                <h4 id="line3_2">Advantages</h4>
+                                <h4 id="line3_2">Merits</h4>
                                 <ol>
                                   <li>Average response time is less</li>
                                   <li>Throughput is more.</li>
@@ -236,7 +198,7 @@
                         <hr>
 
                         <div class="row">
-                                <h4 id="line3_3">Disadvantages</h4>
+                                <h4 id="line3_3">Demerits</h4>
                                 <ol>
                                   <li>There is a cost to calculate the seek time in advance</li>
                                   <li>Can lead to starvation for a request if it has higher seek time as compared to incoming requests.</li>
@@ -269,14 +231,14 @@
                         <div class="row">
                             <hr>
                             <div class="col-md-12 left-align">
-                                <h3 class="dark-text">SCAN<a href="#top">#back to top</a><hr></h3>
+                                <h3 class="dark-text"><i>SCAN</i><hr></h3>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line4_1">Description</h4>
+                                <h4 id="line4_1">About</h4>
                                 <p>This algorithm is also known as the elevator algorithm, because it works the same way an elevator services requests in a building. As a result the requests at the mid-range are serviced more and those arriving behind the disk ark will have to wait.
                                 </p>
                             <!-- end col -->
@@ -285,7 +247,7 @@
 
                         <hr>
                         <div class="row">
-                                <h4 id="line4_2">Advantages</h4>
+                                <h4 id="line4_2">Merits</h4>
                                 <ol>
                                   <li>High Throughput</li>
                                   <li>The response time varies less</li>
@@ -296,7 +258,7 @@
                         <hr>
 
                         <div class="row">
-                                <h4 id="line4_3">Disadvantages</h4>
+                                <h4 id="line4_3">Demerits</h4>
                                 <ol>
                                   <li>Long waiting time for requests for disk locations just visited by the disk arm.
                                   </li>
@@ -324,14 +286,14 @@
                         <div class="row">
                             <hr>
                             <div class="col-md-12 left-align">
-                                <h3 class="dark-text">LOOK<a href="#top">#back to top</a><hr></h3>
+                                <h3 class="dark-text"><i>LOOK</i><hr></h3>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line5_1">Description</h4>
+                                <h4 id="line5_1">About</h4>
                                 <p>This algorithm is very similar to SCAN algorithm, except the disk arm in spite of going to the end of the disk goes only to the last request to be serviced in front of the head and then reverses its direction from there itself. Thus it prevents the extra delay which occurs due to unnecessary traversal to the end of the disk.</p>
                             <!-- end col -->
                         </div>
@@ -339,7 +301,7 @@
 
                         <hr>
                         <div class="row">
-                                <h4 id="line5_2">Advantages</h4>
+                                <h4 id="line5_2">Merits</h4>
                                 <ol>
                                   <li>The extra seek time to traverse to the end is prevented</li>
                                 </ol>
@@ -367,14 +329,14 @@
                         <div class="row">
                             <hr>
                             <div class="col-md-12 left-align">
-                                <h3 class="dark-text">C-SCAN/C-LOOK<a href="#top">#back to top</a><hr></h3>
+                                <h3 class="dark-text"><i>C-SCAN/C-LOOK</i><hr></h3>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line6_1">Description</h4>
+                                <h4 id="line6_1">About</h4>
                                 <p>C stands for circular. The algorithms are very similar to SCAN/LOOK except that the disk serves requests in one direction and jumps to the beginning of the disk when it reaches the last track. This produces a more uniform response time and maybe more efficient overall since a single large jump maybe faster than several smaller ones. (Note that
 When it reaches the furthest end, there will be proportionally fewer requests near where it is because it has just been servicing that end of the disk.) </p>
                             <!-- end col -->

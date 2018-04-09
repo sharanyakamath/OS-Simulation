@@ -5,7 +5,7 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
 <!--<![endif]-->
-
+<body style="background-color:powderblue;">
 <head>
 
     <meta charset="utf-8">
@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="big-title text-center">
-                            <h1>Memory Management Algorithms</h1>
+                            <h1><i>Memory Management Algorithms</i></h1>
                         </div>
                         <!-- end title -->
                     </div>
@@ -61,52 +61,20 @@
             <!-- end section -->
 
             <div class="row">
+                            <div class="col-md-12 left-align">
+                                <h1>Contributors: Prince Abhinav</h1>
+                            </div>
 
-                <div class="col-md-3">
-                    <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
-                        <ul class="nav">
-                            <li><a href="#line1">Introduction</a></li>
-                            <li><a href="#line2">Fixed size partitions</a>
-                              <ul class="nav">
-                                  <li><a href="#line2_1">Description</a></li>
-                                  <li><a href="#line2_2">Advantages</a></li>
-                                  <li><a href="#line2_3">Disadvantages</a></li>
-                                  <!-- <li><a href="#line2_4">Example</a></li> -->
-                              </ul>
-                            </li>
-                            <li><a href="#line3">Variable size partitions</a>
-                              <ul class="nav">
-                                  <li><a href="#line3_1">Description</a></li>
-                                  <li><a href="#line3_2">Advantages</a></li>
-                                  <li><a href="#line3_3">Disadvantages</a></li>
-                                  <!-- <li><a href="#line3_4">Example</a></li> -->
-                              </ul>
-                            </li>
-                        </ul>
-                    </nav >
-                </div>
-                <div class="col-md-9">
-                    <section id = "line1" class="welcome">
 
                         <div class="row">
                             <div class="col-md-12 left-align">
                                 <h2 class="dark-text">Introduction<hr></h2>
                                 <div class="row">
 
-                                    <div class="col-md-12 full">
-                                        <div class="intro1">
-                                            <ul>
-                                                <!-- <li><strong>Demo Page : </strong><a href="http://themeforest.net/user/surjithctly" target="_blank">Click Here</a></li> -->
-                                                <li><strong>Demo Template : </strong>Adarsh Honawad</li>
-                                                <li><strong>Front End Developers : </strong>Adarsh Honawad, Samvid Dharanikota</li>
-                                                <li><strong>Backend End Developers : </strong>Adarsh Honawad, Samvid Dharanikota</li>
-                                                <li><strong>Content : </strong>Samvid Dharanikota</li>
-                                            </ul>
-                                        </div>
-
+                                   
                                         <hr>
                                         <div>
-                                            <p>Every process that has to execute on the CPU needs a certain amount of memory. Memory management deals with the allocation of requested memory to each process for its execution. It is required in an operating system because the size of the main memory is limited, but the number of process that a computer can execute is not. Therefore, OS should make sure memory is allocated efficiently, and memory wastage is minimum.
+                                            <p>Every process that has to execute on the CPU needs a certain amount of memory. Memory management is the functionality of an operating system which handles or manages primary memory and moves processes back and forth between main memory and disk during execution. Memory management keeps track of each and every memory location, regardless of either it is allocated to some process or it is free. It checks how much memory is to be allocated to processes. It decides which process will get memory at what time. It tracks whenever some memory gets freed or unallocated and correspondingly it updates the status.
                                             </p>
 
                                             <p>As a processs enter the system, they are put into an input queue. The OS takes into account the memory requirements of each processes and the amount of available memory. When a process is allocated space, it is loaded into memory and it can then compete for CPU time. When a process terminates, it releases its memory, which the OS may then fill with another process from the input queue.
@@ -134,14 +102,14 @@
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Fixed Size Parition<a href="#top">#back to top</a><hr></h2>
+                                <h2 class="dark-text"><i>Fixed Size Parition</i></h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line2_1">Description</h4>
+                                <h4 id="line2_1">About</h4>
                                 <p>As mentioned before, the continuous main memory is divided into several fixed-size partitions, each of which can hold only on processes. The size of the partitions is determined by the OS, and the number of blocks is determined by the total size of the main memory.
 When a process is added, an available free partition is allocated to the process (provided, the requirements of the process is less than the size of a partition).
 Once a process is removed/completed, the block allocated to it is freed for any other process to be accomodated.
@@ -161,7 +129,7 @@ Once a process is removed/completed, the block allocated to it is freed for any 
 
                         <hr>
                         <div class="row">
-                                <h4 id="line2_2">Advantages</h4>
+                                <h4 id="line2_2">Merits</h4>
                                 <ol>
                                     <li>It is a very simple method of allocation.</li>
                                     <li>Does not require any overhead of storing which locations are free and which are not.</li>
@@ -171,7 +139,7 @@ Once a process is removed/completed, the block allocated to it is freed for any 
                         <hr>
 
                         <div class="row">
-                                <h4 id="line2_3">Disadvantages</h4>
+                                <h4 id="line2_3">Demerits</h4>
                                 <ol>
                                     <li>The number of processes cannot be more than the number of partitions in the memory. (Degree of multiprogramming is bound by the number of partitions).</li>
                                     <li>Process memory requirement cannot exceed the size of a partition.</li>
@@ -199,14 +167,14 @@ Once a process is removed/completed, the block allocated to it is freed for any 
 
                         <div class="row">
                             <div class="col-md-12 left-align">
-                                <h2 class="dark-text">Variable Size Parition<a href="#top">#back to top</a><hr></h2>
+                                <h2 class="dark-text"><i>Variable Size Parition</i><hr></h2>
                             </div>
                             <!-- end col -->
                         </div>
                         <!-- end row -->
 
                         <div class="row">
-                                <h4 id="line3_1">Description</h4>
+                                <h4 id="line3_1">About</h4>
                                 <p>As mentioned before, all memory is initially available for user processes and is considered one large block of available memory, a hole. As and when a process arrives, the exact amount of memory it requires is allocated for the process, and the remaining is free to allocate other processes.</p>
                                 <p>When a process is removed/completed, the memory allocated to it is freed. If there is free memory on any of its sides, the process’ memory is combined with the free memory, to create one large free block (hole) again.</p>
                                 <p>This addition and removal of processes creates discontinuous holes (free memory slots). There are 3 ways this free memory can be allocated:</p>
@@ -223,7 +191,7 @@ Once a process is removed/completed, the block allocated to it is freed for any 
 
                         <hr>
                         <div class="row">
-                                <h4 id="line3_2">Advantages</h4>
+                                <h4 id="line3_2">Merits</h4>
                                 <ol>
                                     <li>The problem of internal fragmentation does not exist, because only the required amount of memory that a process needs is allocated, and not any more.</li>
                                     <li>Allows the process to have a memory requirement of any size (lesser than the total available memory)</li>
@@ -234,7 +202,7 @@ Once a process is removed/completed, the block allocated to it is freed for any 
                         <hr>
 
                         <div class="row">
-                                <h4 id="line3_3">Disadvantages</h4>
+                                <h4 id="line3_3">Demerits</h4>
                                 <ol>
                                     <li>A table has to be maintained to indicate which parts of the memory are available and which are occupied.</li>
                                     <li>External fragmentation is a problem: The total free space available might be sufficient to accomodate the process, but the free holes might not be contiguous, so the process cannot be allocated.</li>

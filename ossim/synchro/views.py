@@ -3,50 +3,7 @@ from django.shortcuts import render
 # Create your views here.
 from . models import SynchroAlg
 
-def SocketIndex(request):
-    return render(request,'synchro/SocketIndex.html')
 
-def Socket(request):
-    return render(request,'synchro/Socket.html')
-
-def Bind(request):
-    return render(request,'synchro/Bind.html')
-
-def Listen(request):
-    return render(request,'synchro/Listen.html')
-
-def Connect(request):
-    return render(request,'synchro/Connect.html')
-
-def Accept(request):
-    return render(request,'synchro/Accept.html')
-
-def Send(request):
-    return render(request,'synchro/Send.html')
-
-def Receive(request):
-    return render(request,'synchro/Receive.html')
-
-def Close(request):
-    return render(request,'synchro/Close.html')
-
-def SocketIndex2(request):
-    return render(request,'synchro/SocketIndex2.html')
-
-def Socket2(request):
-    return render(request,'synchro/Socket2.html')
-
-def Bind2(request):
-    return render(request,'synchro/Bind2.html')
-
-def Send2(request):
-    return render(request,'synchro/Send2.html')
-
-def Receive2(request):
-    return render(request,'synchro/Receive2.html')
-
-def Close2(request):
-    return render(request,'synchro/Close2.html')
 def semaphores(request):
     algos = SynchroAlg.objects.filter(demourl="sem")
     context = {'algos': algos}

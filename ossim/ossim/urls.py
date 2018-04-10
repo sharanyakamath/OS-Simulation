@@ -27,5 +27,6 @@ urlpatterns = [
     url(r'^matdemo/', include('mat.urls')),
     url(r'^mat/', views.matindex),
     url(r'^filesystem/', include('filesystem.urls')),
+    url(r'^rtos/', include('rtos.urls')),
     url(r'^wiki/', include('wikipages.urls')),
 ]

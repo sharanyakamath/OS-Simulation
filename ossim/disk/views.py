@@ -23,6 +23,21 @@ def detail(request,pk):
 def demo(request):
     return render(request,'disk/disk.html')
 
+def SSTF(request):
+    return render(request,'disk/SSTF.html')
+
+def SCAN(request):
+    return render(request,'disk/SCAN.html')
+
+def CSCAN(request):
+    return render(request,'disk/CSCAN.html')
+
+def LOOK(request):
+    return render(request,'disk/LOOK.html')
+
+def CLOOK(request):
+    return render(request,'disk/CLOOK.html')
+
 @csrf_exempt
 def gateway(request):
 

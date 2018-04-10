@@ -352,5 +352,6 @@ def fcfs(inputDict):
         curr = req
 
     result["sequence"] = [[r[i],-i] for i in range(len(r))]
+    return result
 
     return result

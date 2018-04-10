@@ -10,36 +10,150 @@
 
 {% block content %}
 
-<h1>Disk Scheduling</h1>
-<div id="choice">
-    <ul id="ulchoice">
-        <a href="/disk/demo/"><li id="lichoice">FCFS</li></a>
-	<a href="/disk/SSTF/"><li id="lichoice">SSTF</li></a>
-	<a href="/disk/SCAN/"><li id="lichoice">SCAN</li></a>
-	<a href="/disk/CSCAN/"><li id="lichoice">CSCAN</li></a>
-	<a href="/disk/LOOK/"><li id="lichoice">LOOK</li></a>
-	<a href="/disk/CLOOK/"><li id="lichoice">CLOOK</li></a>
-    </ul>
+<h1><b>Disk Scheduling</b></h1>
+
+
+
+
+<div class="cardz" style="position:absolute;left:10%">
+<div class="c">
+    <div class="card">
+        <a href="/disk/demo/">
+<img src="http://www.cs.iit.edu/~cs561/cs450/disksched/fcfs.bmp">
+        </a>
+        <div class="container">
+            <h4 style="color: black"><b>FCFS</b></h4>
+        </div>
+
+    </div>
+
+    <div class="card">
+        <a href="/disk/SSTF/">
+	<img src="http://www.cs.iit.edu/~cs561/cs450/disksched/sstf.bmp">
+<!--
+            <img src="https://i.ytimg.com/vi/t5PTJMHz4vE/maxresdefault.jpg">
+-->
+        </a>
+        <div class="container">
+            <h4 style="color: black"><b>SSTF</b></h4>
+        </div>
+
+    </div>
+
+
+    <div class="card">
+        <a href="/disk/SCAN/">
+	<img src="http://www.cs.iit.edu/~cs561/cs450/disksched/scan.bmp">
+<!--
+            <img src="https://i.ytimg.com/vi/-cMphAtxerA/maxresdefault.jpg">
+-->    
+    </a>
+        <div class="container">
+            <h4 style="color: black"><b>SCAN</b></h4>
+        </div>
+
+    </div><br>
 </div>
 
-<!-- <div class="main-container">
-{% for alg in algos %}
-    <div class="alg-container">
-      <div class="alg-name">  {{alg.name}} </div>
-      <div class="alg-description">
-        {{alg.description}}
-      </div>
+<div class="c">
+   
+      <div class="card">
+        <a href="/disk/CSCAN/">
+	<img src="http://www.cs.iit.edu/~cs561/cs450/disksched/c-scan.bmp">
+<!--
+            <img src="https://i.ytimg.com/vi/U2kqwXjimwg/maxresdefault.jpg">
+-->  
+      </a>
+        <div class="container">
+            <h4 style="color: black"><b>CSCAN</b></h4>
+        </div>
+
     </div>
-    <br>
-{% endfor %}
-<a href="/disk/demo/" class="btn btn-primary">Demo</a><br>
+
+    <div class="card">
+        <a href="/disk/LOOK/">
+	<img src="http://2.bp.blogspot.com/-hZRgKoieQKY/UpGfJKu45nI/AAAAAAAAAdE/ELSYT658NRU/s1600/1.PNG">
+<!--
+            <img src="https://i.ytimg.com/vi/H4v_bybBBHk/maxresdefault.jpg">
+-->    
+    </a>
+        <div class="container">
+            <h4 style="color: black"><b>LOOK</b></h4>
+        </div>
+
+    </div>
 
 
-</div> -->
+    <div class="card">
+        <a href="/disk/CLOOK/">
+	<img src="http://www.cs.iit.edu/~cs561/cs450/disksched/c-look.bmp">
+<!--
+           <img src="https://i.ytimg.com/vi/gpRWlPDV_OQ/maxresdefault.jpg">
+-->   
+     </a>
+        <div class="container">
+            <h4 style="color: black"><b>CLOOK</b></h4>
+        </div>
+
+    </div>
+    
+
+</div>
+
+
 {% endblock %}
 {% block style %}
 <style>
+    .card {
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.8);
+        transition: 0.3s;
+        width: 350px;
+        height: 350px;
+        border-radius: 5px;
+        border-color: white;
+        border-width: 2px;
+        padding: 0px;
+        margin: 30px;
+        background-color: black;
+    }
+    
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
 
+   html,body{
+	overflow-x: hidden;
+	overflow-y: hidden;
+	}    
+
+
+    img {
+        border-radius: 5px 5px 0 0;
+        border-color: black;
+        border-width: 2px;
+        width: 350px;
+        height: 350px;
+    }
+    
+    .container {
+        padding: 2px 16px;
+    }
+    
+    .c {
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        color: black;
+    }
+    
+    body {
+        background-color:#FFFFCC;
+    }
+    
+    h1 {
+        background-color: red;
+        color: black;
+    }
 </style>
-
+</div>
 {% endblock %}

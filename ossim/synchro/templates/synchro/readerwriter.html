@@ -77,7 +77,7 @@
       </div>
 
       <br /><br /></div>
-      <input type = "submit", name ="Go!", onclick="update()", class="btn btn-primary" style="width: 160px; height: 75px; position: absolute; top: 45%; left: 79%; font-size: 30px;">
+      <input type = "submit", name ="Go!", onclick="update()", class="btn btn-primary" style="width: 160px; height: 75px; position: absolute; top: 45%; left: 79%; font-size: 20px;">
     </form>
 
     <button type = "button", name = "one", style="height:80px;width:165px;position:absolute;top:10%;left:1%;background-color:white"><img src = "" id ="one" style="height:70px; width:70px;display:none; position: relative; left: 27%;"> </button>
@@ -88,7 +88,7 @@
     <button type = "button", name = "six", style="height:80px;width:165px;position:absolute;top:10%;left:71%;background-color:white"><img src = "" id ="six" style="height:70px; width:70px;display:none; position: relative; left: 27%;"> </button>
     <button type = "button", name = "seven", style="height:80px;width:165px;position:absolute;top:10%;left:85%;background-color:white"><img src = "" id ="seven" style="height:70px; width:70px;display:none; position: relative; left: 27%;"> </button>
 
-    <button type = "button", id ="lock", class ="btn btn-primary", name = "lock", style="height:150px;width:150px;position:absolute;top:50%;left:4%;font-size:20px; border-radius: 100px;">Writing lock: </button>
+    <button type = "button", id ="lock", class ="btn btn-primary", name = "lock", style="height:150px;width:150px;position:absolute;top:50%;left:4%;font-size:15px; border-radius: 120px;">Writing lock: </button>
 
 
     <div>
@@ -143,43 +143,43 @@
             if(document.forms[0].elements[0].checked == true)
             {
               document.getElementById("one").style.display = "block";
-              document.getElementById("one").src = "{% static 'img/reader.png' %}";
+              document.getElementById("one").src = "{% static 'img/book.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[2].checked == true)
             {
               document.getElementById("two").style.display = "block";
-              document.getElementById("two").src = "{% static 'img/reader.png' %}";
+              document.getElementById("two").src = "{% static 'img/book.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[4].checked == true)
             {
               document.getElementById("three").style.display = "block";
-              document.getElementById("three").src = "{% static 'img/reader.png' %}";
+              document.getElementById("three").src = "{% static 'img/book.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[6].checked == true)
             {
               document.getElementById("four").style.display = "block";
-              document.getElementById("four").src = "{% static 'img/reader.png' %}";
+              document.getElementById("four").src = "{% static 'img/book.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[8].checked == true)
             {
               document.getElementById("five").style.display = "block";
-              document.getElementById("five").src = "{% static 'img/reader.png' %}";
+              document.getElementById("five").src = "{% static 'img/book.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[10].checked == true)
             {
               document.getElementById("six").style.display = "block";
-              document.getElementById("six").src = "{% static 'img/reader.png' %}";
+              document.getElementById("six").src = "{% static 'img/book.png' %}";
               mutex =-1;
             }
             if(document.forms[0].elements[12].checked == true)
             {
               document.getElementById("seven").style.display = "block";
-              document.getElementById("seven").src = "{% static 'img/reader.png' %}";
+              document.getElementById("seven").src = "{% static 'img/book.png' %}";
               mutex =-1;
             }
 
@@ -266,7 +266,7 @@
     <p style="position:absolute;top:60%;left:79%;font-size:22px"><b> Access Legend: </b></p>
     <button type = "button", style="height:25px;width:25px;position:absolute;top:65%;left:80%;background-color:#FFFFFF"> </button>
     <p style="position:absolute;top:65%;left:83%;font-size:20px"> Not accessing </p>
-    <img src = "{% static 'img/reader.png' %}", style="height:25px;width:25px;position:absolute;top:70%;left:80%;"> </button>
+    <img src = "{% static 'img/book.png' %}", style="height:25px;width:25px;position:absolute;top:70%;left:80%;"> </button>
     <p style="position:absolute;top:70%;left:83%;font-size:20px"> Reading </p>
     <img src = "{% static 'img/writer.png' %}", style="height:25px;width:25px;position:absolute;top:75%;left:80%;"> </button>
     <p style="position:absolute;top:75%;left:83%;font-size:20px"> Writing </p>

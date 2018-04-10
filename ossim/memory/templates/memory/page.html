@@ -1,74 +1,138 @@
-<!DOCTYPE html>
 <html>
 <head>
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
-
-<style>
-
-</style>
 <body style="padding:10px;">
-  <div class="panel panel-primary">
-      <div class="panel-heading"><h1 style="text-alig
-        var text = JSON.strn:center;">
-        Page Replacement Algorithms
-      </h1></div>
-  <br>
-  <div class="panel-body">
-  <div id="input">
-    <h4>Requests:</h4>
-     <input type="text" class="requests form-control" placeholder="Enter requests"></input>
-     <h4>Cache Size:</h4>
-      <input type="text" class="size form-control" id="csize" placeholder="Enter cache size"></input>
+<div class="header">
+  <h1>Page Replacement Algorithms</h1>
+</div>
+<br>
+<br>
+<div class="container">
+  <center></center><button type="button" class="button" data-toggle="modal" data-target="#myModal" style="height:175px;width:175px;position:absolute;top:43%;left:44%;border-radius:125px;border:1px solid #000">Enter details</button>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <center><h3 class="modal-title">Enter details</h3></center>
+        </div>
+        <div class="modal-body">
+          <div class="panel-body">
+            <div id="input">
+              <h4>Reference string :</h4>
+              <input type="text" class="requests form-control" placeholder="Enter requests"></input>
+              <h4>Number of frames :</h4>
+              <input type="text" class="size form-control" id="csize" placeholder="Enter number of frames"></input>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <center><button style="width: 175px;e;font-size: 20px;padding: 8px 16px;" id="submit" class="button" data-dismiss="modal">Submit</button></center>
+        </div>
+      </div>
     </div>
-
-  </div>
-  <div class="panel-footer" style="height:50px;">
-    <button style="float:right;" id="submit" class="btn btn-primary">Submit</button>
   </div>
 </div>
-  <div>
 
-  </div>
+<div class="container">
+  <center></center><button type="button" class="button" data-toggle="modal" data-target="#myModal1" style="height:125px;width:125px;position:absolute;top:20%;left:26%;border-radius:125px;border:1px solid #000">FIFO</button>
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <center><h3 class="modal-title">First In First Out</h3></center>
+        </div>
+        <div class="modal-body">
+          <div id="fifo">
 
-  <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#1">FIFO</a></li>
-    <li><a data-toggle="tab" href="#2">LRU</a></li>
-    <li><a data-toggle="tab" href="#3">OPT</a></li>
-  </ul>
-
-  <div class="tab-content">
-    <div id="1" class="tab-pane fade in active">
-      <h1>FIRST IN FIRST OUT</h1>
-      <button class="proceed hidden btn btn-primary" id="proceed1">Proceed</button><br><br>
-      <div id="fifo">
-
+          </div>
+          <div class="answer" id="answers1"></div>
+        </div>
+        <div class="modal-footer">
+          <center> <button class="proceed hidden btn btn-primary" id="proceed1">Proceed</button><br><br></center>
+        </div>
       </div>
-      <div class="answer" id="answers1"></div>
-    </div>
-    <div id="2" class="tab-pane fade">
-      <h1>LEAST RECENTLY USED</h1>
-      <button class="proceed hidden btn btn-primary" id="proceed2">Proceed</button><br><br>
-      <div id="lru">
-      </div>
-      <div class="answer" id="answers2"></div>
-    </div>
-    <div id="3" class="tab-pane fade">
-      <h1>OPTIMUM</h1>
-      <button class="proceed hidden btn btn-primary" id="proceed3">Proceed</button><br><br>
-      <div id="opt">
-      </div>
-      <div class="answer" id="answers3"></div>
     </div>
   </div>
+</div>
+
+<div class="container">
+  <center></center><button type="button" class="button" data-toggle="modal" data-target="#myModal2" style="height:125px;width: 125px;position:absolute;top:73%;left:26%;border-radius:125px;border:1px solid #000">LRU</button>
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <center><h3 class="modal-title">Least Recently Used</h3></center>
+        </div>
+        <div class="modal-body">
+          <div id="lru">
+
+          </div>
+          <div class="answer" id="answers2"></div>
+        </div>
+        <div class="modal-footer">
+          <center> <button class="proceed hidden btn btn-primary" id="proceed2">Proceed</button><br><br></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <center></center><button type="button" class="button" data-toggle="modal" data-target="#myModal3" style="height:125px;width:125px;position:absolute;top:73%;left:68%;border-radius:125px;border:1px solid #000">OPT</button>
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <center><h3 class="modal-title">Optimal</h3></center>
+        </div>
+        <div class="modal-body">
+          <div id="opt">
+
+          </div>
+          <div class="answer" id="answers3"></div>
+        </div>
+        <div class="modal-footer">
+          <center> <button class="proceed hidden btn btn-primary" id="proceed3">Proceed</button><br><br></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <center></center><button type="button" class="button" data-toggle="modal" data-target="#myModal4" style="height:150px;width:150px;position:absolute;top:20%;left:68%;border-radius:125px;border:1px solid #000">2nd CHANCE</button>
+  <div class="modal fade" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <center><h3 class="modal-title">Second Chance</h3></center>
+        </div>
+        <div class="modal-body">
+          <div id="second_chance">
+
+          </div>
+          <div class="answer" id="answers4"></div>
+        </div>
+        <div class="modal-footer">
+          <center> <button class="proceed hidden btn btn-primary" id="proceed4">Proceed</button><br><br></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
-</html>
 
 <script>
 
@@ -76,32 +140,31 @@
 var count1= 0;
 var count2= 0;
 var count3= 0;
+var count4= 0;
 var cacheSize = 3;
 var data = [1,3,2,1,2,4,5,2]
 var output = {'states': [{'status': 'M', 'cache': '1 -1 -1'}, {'status': 'M', 'cache': '1 3 -1'},{'status': 'M', 'cache': '1 3 2'}, {'status': 'H', 'cache': '1 3 2'},{'status': 'H', 'cache': '1 3 2'}, {'status': 'M', 'cache': '4 3 2'}, {'status': 'M', 'cache': '4 5 2'}, {'status': 'H', 'cache': '4 5 2'}],  'hit-ratio': 0.375, 'hits': 3, 'miss': 5};
 var states = output["states"];
-var hits = [output["hits"],output["hits"],output["hits"]];
-var misses = [output["miss"],output["miss"],output["miss"]];
-var hitratio = [output["hit-ratio"],output["hit-ratio"],output["hit-ratio"]];
+var hits = [output["hits"],output["hits"],output["hits"],output["hits"]];
+var misses = [output["miss"],output["miss"],output["miss"],output["miss"]];
+var hitratio = [output["hit-ratio"],output["hit-ratio"],output["hit-ratio"],output["hit-ratio"]];
 
 
 $("#submit").click(function(){
     data = $(".requests").val().trim().split(" ");
     cacheSize = parseInt($(".size").val().trim());
-    count1 = count2 = count3 = 0;
-    $("#fifo,#lru,#opt,.answer").empty();
-    // $("#lru").empty();
-    // $("#opt").empty();
-    $('#fifo,#lru,#opt').css('height',(data.length/8)*180+'px');
+    count1 = count2 = count3 = count4 = 0;
+    $("#fifo,#lru,#opt,#second_chance,.answer").empty();
+    $('#fifo,#lru,#opt,#second_chance').css('height',(data.length/8)*300+'px');
     var reqs = JSON.stringify(data.map(Number));
     var csize = JSON.stringify(cacheSize);
     $.post('/memory/fifo/',{requests: reqs, size: csize}, function(result){
 
       output = result;
 
-      hits = [output['fifo']["hits"],output['lru']["hits"],output['opt']["hits"]];
-      misses = [output['fifo']["miss"],output['lru']["miss"],output['opt']["miss"]];
-      hitratio = [output['fifo']["hit-ratio"],output['lru']["hit-ratio"],output['opt']["hit-ratio"]];
+      hits = [output['fifo']["hits"],output['lru']["hits"],output['opt']["hits"],output['second_chance']["hits"]];
+      misses = [output['fifo']["miss"],output['lru']["miss"],output['opt']["miss"],output['second_chance']["miss"]];
+      hitratio = [output['fifo']["hit-ratio"],output['lru']["hit-ratio"],output['opt']["hit-ratio"],output['second_chance']["hit-ratio"]];
       $(".proceed").removeClass("hidden");
     });
 
@@ -153,11 +216,11 @@ $(card).hide().appendTo("#"+idname).fadeIn(1000);
   var div0 = document.createElement("div");
   div0.setAttribute("class", "hitmiss");
   if(output[idname]["states"][i]["status"] == 'H'){
-    div0.innerHTML = "&#x2714;";
+    div0.innerHTML = "hit";
     div0.className +=" hit";
   }
   else{
-    div0.innerHTML = "&#x2716;";
+    div0.innerHTML = "miss";
     div0.className +=" miss";
   }
   card.appendChild(div0);
@@ -170,7 +233,7 @@ function cleanup(no){
   $("#proceed"+no).addClass("hidden");
 
    div0 = document.getElementById("answers"+no);
-   div0.innerHTML = "<br><h2 style='text-align: center;'>HITS: "+ hits[no-1] + ",   MISSES: "+misses[no -1] + ",   HIT RATIO: "+hitratio[no-1]+"</h2>";
+   div0.innerHTML = "<br><h2 style='text-align: center;'>Page hits: "+ hits[no-1] + ",   Page faults: "+misses[no -1] + ",   Hit ratio: "+hitratio[no-1]+"</h2>";
    div0.setAttribute("text-align","center");
    br = document.createElement("br");
    $(div0).hide().fadeIn(1000);
@@ -202,8 +265,48 @@ $("#proceed3").click(function(){
   }
 });
 
+$("#proceed4").click(function(){
+  drawCard("second_chance",count4);
+  count4++;
+  if(count4 == data.length){
+    cleanup(4);
+  }
+
+});
+
 </script>
 <style>
+
+.header{
+    padding: 1em;
+    color: white;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    text-align: center;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.button {
+    background-color: black;
+    color: white;
+    padding: 16px 32px;
+    border: 2px solid ;
+    border-radius: 40px;
+    font-family: "Comic Sans MS", cursive, serif;
+    font-size: 25px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 250px;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
 .tab-content,.nav nav-tabs{
   padding:30px;
 }
@@ -260,6 +363,10 @@ $("#proceed3").click(function(){
 }
 h1{
   text-align: center;
+  font-family: "Comic Sans MS", cursive, serif;
+}
+h3{
+  font-size:30px;
 }
 #csize{
   width: 300px;
@@ -274,3 +381,7 @@ h1{
   margin-right: 10px;
 }
 </style>
+
+</html>
+
+

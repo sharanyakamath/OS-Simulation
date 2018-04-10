@@ -1,5 +1,7 @@
+{% extends "memory/navbar.html" %}
+{% load staticfiles %}
  {% load static %}
-<!DOCTYPE html>
+{% block content %}
 <html>
 <head>
     <title>
@@ -21,21 +23,21 @@
 </head>
 <body>
 
- <nav role="navigation" class="navbar navbar-default">
+ <!-- <nav role="navigation" class="navbar navbar-default">
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/">Home</a></li>
-                <!-- <li><a href="/process/">Process Scheduling</a></li> 
+                <li><a href="/process/">Process Scheduling</a></li> 
                 <li><a href="/memory/page/">Page Replacement</a></li>
                 <li><a href="/disk/">Disk Scheduling</a></li>
                 <li><a href="/synchro/semaphores/">Semaphores</a></li>
                 <li><a href="/synchro/socket/">Sockets</a></li>
                 <li><a href="/filesystem/">File Structure</a></li>
                 <li><a href="/mat/">Memory Allocation</a></li>
-                <li class="active"><a href="/synchro/deadlocks/">Banker's Algorithm</a></li>-->
+                <li class="active"><a href="/synchro/deadlocks/">Banker's Algorithm</a></li>
             </ul>
         </div>
-    </nav>
+    </nav>-->
 
 <h1>Memory Management Techniques</h1>
 
@@ -122,3 +124,4 @@ img {
 </style>
 </body>
 </html>
+{% endblock %}

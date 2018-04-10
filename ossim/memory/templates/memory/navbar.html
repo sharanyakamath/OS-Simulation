@@ -1,0 +1,122 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<style>
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color:#B4EEB4;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 30px;
+}
+
+.sidenav a {
+    padding: 0px 5px 5px 20px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #000;
+    display: block;
+    transition: 0.3s;
+    font-family: Courier;
+}
+
+.sidenav a:hover {
+    color: #000;
+    background-color: #E0EEE0;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.round-button {
+    display: block;
+    width:200px;
+    height:200px;
+    line-height:200px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:#f5f5f5;
+    text-align:center;
+    text-decoration:none;
+    background: #464646;
+    box-shadow: 0 0 3px gray;
+    font-size:40px;
+    font-weight:bold;
+}
+
+.round-button:hover {
+    background: #262626;
+}
+
+</style>
+</head>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <li><a href="/" class="btn" role="button"><i class="fa fa-home"></i>Home</a></li>
+  <li><a href="/process/" class="btn" role="button"><i class="fa fa-clock-o"></i>Process Scheduling</a></li>
+  <li><a href="/memory/page/" class="btn" role="button"><i class="glyphicon glyphicon-file"></i></i>Page Replacement</a></li>
+  <li><a href="/disk/" class="btn" role="button"><i class="glyphicon glyphicon-floppy-disk"></i>Disk Scheduling</a></li>
+  <li><a href="/synchro/semaphores/" class="btn" role="button"><i class="fa fa-close"></i>Semaphores</a></li>
+  <li><a href="/synchro/socket/" class="btn" role="button"><i class="fa fa-television"></i>Socket Programming</a></li>
+  <li><a href="/filesystem/" class="btn" role="button"><i class="fa fa-folder"></i>File Structure</a></li>
+  <li><a href="/matdemo" class="btn" role="button"><i class="fa fa-table"></i>Memory Allocation</a></li>
+  <li><a href="/synchro/deadlocks/" class="btn" role="button"><i class="glyphicon glyphicon-usd"></i>Banker's Algorithm</a></li>
+</div>
+
+
+
+<div id="main">
+  <span style="font-size:50px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    {%block content%}
+    {%endblock%}
+</div>
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "350px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+</script>
+
+</body>
+</html>
+
+
+
+

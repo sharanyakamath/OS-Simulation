@@ -346,44 +346,145 @@ def look(data):
     return result
 
 
-def scan(inputDict):
-	r = []
-	r = inputDict["requests"]
-	curr = inputDict["current"]
-	prev = inputDict["prev"]
-	r.append(inputDict["cyl"])#im appending max and 0 so that our head goes to the end
-	r.append(0)
-	r.sort()
+def scan(data):
+	# r = []
+	# r = inputDict["requests"]
+	# curr = inputDict["current"]
+	# prev = inputDict["prev"]
+	# r.append(inputDict["cyl"])#im appending max and 0 so that our head goes to the end
+	# r.append(0)
+	# r.sort()
 
-	index=0;
+	# index=0;
 
-	for i in r:
-		if(i>curr):
-			break
-		index=index+1
+	# for i in r:
+	# 	if(i>curr):
+	# 		break
+	# 	index=index+1
 
-	end = []
-	end = r[index:]
-	beg = r[:index]
-	temp = end
+	# end = []
+	# end = r[index:]
+	# beg = r[:index]
+	# temp = end
 
-	if curr-prev>0:
-		displacement = (end[-1]-curr) + (r[index-1]-r[0])
-		temp = end
-		temp.extend(beg)
+	# if curr-prev>0:
+	# 	displacement = (end[-1]-curr) + (r[index-1]-r[0])
+	# 	temp = end
+	# 	temp.extend(beg)
 
-	else:
-		displacement = curr - beg[0]
-		beg.reverse()
-		displacement = displacement - end[0]
-		end.reverse()
-		displacement = displacement + end[0]
-		temp = beg
-		temp.extend(end)
-	result = {}
-	result["sequence"] = [[temp[i],-i] for i in range(len(temp))]
-	result["displacement"] = displacement
-	return result
+	# else:
+	# 	displacement = curr - beg[0]
+	# 	beg.reverse()
+	# 	displacement = displacement - end[0]
+	# 	end.reverse()
+	# 	displacement = displacement + end[0]
+	# 	temp = beg
+	# 	temp.extend(end)
+	# result = {}
+	# result["sequence"] = [[temp[i],-i] for i in range(len(temp))]
+	# result["displacement"] = displacement
+	# return result */
+    def RMOVE(count):
+
+        i=arr.index(curr_head)
+        sum=0
+
+        while(count<N):
+            if i==N-1:
+                #print "%d->%d %d"%(arr[N-1],tot_cyl-1,tot_cyl-arr[N-1]-1)
+                sum+=tot_cyl-arr[N-1]-1
+                sequence.append(tot_cyl-1)
+
+
+                i=0
+
+                #print "%d->%d %d"%(tot_cyl-1,0,0)
+                sequence.append(0)
+
+                #print "%d->%d %d"%(0,arr[0],tot_cyl-arr[0])
+                sequence.append(arr[0])
+
+                sum+=tot_cyl-arr[0]
+                count+=1
+
+            #print "%d->%d %d"%(arr[i],arr[i+1],arr[i+1]-arr[i])
+            sequence.append(arr[i+1])
+
+            sum+=arr[i+1]-arr[i]
+            count+=1
+            i+=1
+
+        return sum
+
+    def LMOVE(count):
+
+        i=arr.index(curr_head)
+        sum=0
+
+        while(count<N):
+            if i==0:
+                #print "%d->%d %d"%(arr[0],0,arr[0]-0)
+                sum+=arr[0]-0
+                sequence.append(0)
+
+
+                i=N-1
+
+                #print "%d->%d %d"%(0,tot_cyl-1,0)
+                sequence.append(tot_cyl-1)
+
+                #print "%d->%d %d"%(tot_cyl-1,arr[N-1],arr[N-1])
+                sequence.append(arr[N-1])
+
+                sum+=arr[N-1]
+                count+=1
+
+            #print "%d->%d %d"%(arr[i],arr[i-1],arr[i]-arr[i-1])
+            sequence.append(arr[i-1])
+
+            sum+=arr[i]-arr[i-1]
+            count+=1
+            i-=1
+
+        return sum
+
+    RIGHT=0
+    LEFT=1
+
+    #print "Enter Total no. of cylinders, curr_head and prev head:"
+    tot_cyl=data["cyl"]
+    curr_head=data["current"]
+    prev_head=data["prev"]
+
+
+    N=data["n"]
+
+    arr = data["requests"]
+    arr.append(curr_head)
+    arr.sort()
+
+    DIR=RIGHT if prev_head<curr_head else LEFT
+
+    sum=0
+    count=1
+
+    sequence=[]
+
+    sequence.append(curr_head)
+    N+=1
+
+
+    if DIR==RIGHT:
+        sum+=RMOVE(count)
+       # print "\nTotal moves=%d"%(sum)
+    else:
+        sum+=LMOVE(count)
+        #print "\nTotal moves=%d"%(sum)
+    result={}
+    result["sequence"] = [[sequence[i],-i] for i in range(len(sequence))]
+    result["displacement"] = sum
+    return result
+
 
 def sstf(inputDict):
 	r = inputDict["requests"]

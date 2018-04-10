@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'disk',
     'ossim',
     'mat',
-
+    'rtos',
     'filesystem',
     'wikipages',
 ]

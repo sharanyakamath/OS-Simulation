@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'mat',
     'filesystem',
     'wikipages',
+    'rtos',
 ]
 
 MIDDLEWARE = [
